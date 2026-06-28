@@ -1,0 +1,100 @@
+/* হেডারকে স্টিকি (Sticky) করার মেইন কোড */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+/* --- Top Bar Styling --- */
+.top-bar {
+  background-color: #002b49; /* গাঢ় নীল রঙ */
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 13px;
+}
+
+.top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.top-left, .top-right {
+  display: flex;
+  gap: 20px;
+}
+
+.top-right a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* --- Main Navbar Styling --- */
+.main-navbar {
+  background-color: #ffffff;
+  padding: 15px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-logo {
+  height: 60px; /* লোগোর হাইট সাইজ অনুযায়ী অ্যাডজাস্ট করতে পারো */
+  object-fit: contain;
+}
+
+/* মেনু লিংকগুলোর ডিজাইন */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 700;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  color: #71a02f; /* সেইম গ্রিন অ্যাকসেন্ট */
+  border-bottom: 2px solid #71a02f;
+  padding-bottom: 5px;
+}
+
+/* ডানপাশের সবুজ বাটন */
+.btn-quote {
+  background-color: #71a02f;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.btn-quote:hover {
+  background-color: #5c8324;
+}
