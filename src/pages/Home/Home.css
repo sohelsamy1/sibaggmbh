@@ -1,0 +1,21 @@
+.hero-section {
+  min-height: calc(100vh - 120px);
+  background: url('/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+/* ছবির বাম পাশের নির্দিষ্ট ডার্ক নীল শ্যাডো এফেক্ট */
+.hero-overlay {
+  background: linear-gradient(to right, rgba(11, 33, 58, 0.95) 0%, rgba(11, 33, 58, 0.85) 35%, rgba(11, 33, 58, 0.2) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+/* মোবাইল রেসপন্সিভনেস এর জন্য ছোট্ট ফিক্স */
+@media (max-width: 768px) {
+  .hero-overlay {
+    background: rgba(11, 33, 58, 0.92);
+  }
+}

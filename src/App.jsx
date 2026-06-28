@@ -1,16 +1,12 @@
 import React from 'react';
-// যদি Header.jsx ফাইলটা সরাসরি components ফোল্ডারে থাকে, তবে এই পাথ কাজ করবে:
-import Header from "./components/Header/Header";
-
-// নোট: যদি ফিক্স না হয়, তবে উপরের ৩ নম্বর লাইনের বদলে নিচের লাইনটা ট্রাই করতে পারো:
-// import Header from './components/Header/Header';
+import Header from './components/Header/Header'; // 👈 সঠিক পাথ
+import Home from './pages/Home/Home';           // 👈 হোম পেজ ইম্পোর্ট
 
 function App() {
   return (
     <div>
-      {/* তোমার হেডার কম্পোনেন্ট */}
       <Header />
-          
+      <Home />
     </div>
   );
 }
