@@ -3,7 +3,7 @@ import React from 'react';
 function Hero() {
   const heroSectionStyle = {
     minHeight: 'calc(100vh - 120px)',
-    background: `linear-gradient(to right, rgba(11, 33, 58, 0.95) 0%, rgba(11, 33, 58, 0.85) 35%, rgba(11, 33, 58, 0.2) 70%, rgba(0, 0, 0, 0) 100%), url('/banner.png') no-repeat center center`,
+    background: `linear-gradient(to right, rgba(11, 33, 58, 0.95) 0%, rgba(11, 33, 58, 0.85) 35%, rgba(11, 33, 58, 0.2) 70%, rgba(0, 0, 0, 0) 100%), url('/banner.webp') no-repeat center center`,
     backgroundSize: 'cover',
   };
 

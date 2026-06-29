@@ -5,7 +5,7 @@ function Service() {
   const services = [
     {
       title: 'GEBÄUDEREINIGUNG',
-      image: '/card1.png',
+      image: '/card1.webp',
       // বিল্ডিং ক্লিনিং আইকন
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -24,7 +24,7 @@ function Service() {
     },
     {
       title: 'BAUREINIGUNG',
-      image: '/card2.png',
+      image: '/card2.webp',
       // ক্রেন/কন্সট্রাকশন আইকন
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -42,7 +42,7 @@ function Service() {
     },
     {
       title: 'BAULEISTUNGEN',
-      image: '/card3.png',
+      image: '/card3.webp',
       // গ্রিড/কন্সট্রাকশন স্ট্রাকচার আইকন
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -61,7 +61,7 @@ function Service() {
     },
     {
       title: 'FACILITY SERVICE',
-      image: '/card4.png',
+      image: '/card4.webp',
       // হোম/ফ্যাসিলিটি আইকন
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

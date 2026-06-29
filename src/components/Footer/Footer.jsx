@@ -11,7 +11,7 @@ const Footer = () => {
           {/* ১. লোগো এবং ইমারজেন্সি BOX */}
           <div className="col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start">
             <img 
-              src="/logo.png" 
+              src="/logo.webp" 
               alt="SIBAG Logo" 
               className="mb-4" 
               style={{ maxWidth: '190px', height: 'auto' }} 

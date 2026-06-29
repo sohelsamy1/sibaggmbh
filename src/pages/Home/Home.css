@@ -1,6 +1,6 @@
 .hero-section {
   min-height: calc(100vh - 120px);
-  background: url('/hero-bg.jpg') no-repeat center center;
+  background: url('/banner.webp') no-repeat center center;
   background-size: cover;
 }
 

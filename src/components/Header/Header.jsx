@@ -34,7 +34,7 @@ function Header() {
             {/* লোগোতেও ক্লিক করলে যেন মেইন ডোমেইনে যায় সেজন্য <a> ট্যাগ দিয়ে র‍্যাপ করা হলো */}
             <a href="/">
               <img 
-                src="/logo.png" 
+                src="/logo.webp" 
                 alt="S.I.B.A.G Logo" 
                 className="site-logo" 
                 onError={(e) => {

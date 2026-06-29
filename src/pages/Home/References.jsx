@@ -5,32 +5,32 @@ const References = () => {
   const projectsData = [
     {
       id: 1,
-      image: '/Reference1.png', // পাবলিক ফোল্ডারে তোমার ছবির পাথ দাও
+      image: '/Reference1.webp', // পাবলিক ফোল্ডারে তোমার ছবির পাথ দাও
       titleDE: 'BÜROGEBÄUDE'
     },
     {
       id: 2,
-      image: '/Reference2.png',
+      image: '/Reference2.webp',
       titleDE: 'WOHNANLAGEN'
     },
     {
       id: 3,
-      image: '/Reference3.png',
+      image: '/Reference3.webp',
       titleDE: 'ROHBAU & BAUARBEITEN'
     },
     {
       id: 4,
-      image: '/Reference4.png',
+      image: '/Reference4.webp',
       titleDE: 'INDUSTRIE & GEWERBE'
     },
     {
       id: 5,
-      image: '/Reference5.png',
+      image: '/Reference5.webp',
       titleDE: 'PRAXEN & KANZLEIEN'
     },
     {
       id: 6,
-      image: '/Reference6.png',
+      image: '/Reference6.webp',
       titleDE: 'EINKAUFSZENTREN'
     }
   ];
