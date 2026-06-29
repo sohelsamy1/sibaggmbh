@@ -1,100 +1,140 @@
-/* হেডারকে স্টিকি (Sticky) করার মেইন কোড */
+/* ==========================================================================
+   🎨 GLOBAL & DESKTOP STYLING (💯% Pure Sticky + Underline Hover)
+   ========================================================================== */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-family: sans-serif;
+    width: 100%;
+    position: sticky; 
+    top: 0;
+    z-index: 1050; 
+    background-color: #ffffff;
 }
 
-/* --- Top Bar Styling --- */
-.top-bar {
-  background-color: #002b49; /* গাঢ় নীল রঙ */
-  color: #ffffff;
-  padding: 8px 0;
-  font-size: 13px;
-}
-
-.top-bar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.top-left, .top-right {
-  display: flex;
-  gap: 20px;
-}
-
-.top-right a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-/* --- Main Navbar Styling --- */
 .main-navbar {
-  background-color: #ffffff;
-  padding: 15px 0;
-  border-bottom: 1px solid #eaeaea;
+    position: sticky !important;
+    top: 0 !important;
+    background-color: #ffffff !important; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05) !important; 
 }
 
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
+/* লোগোর স্ট্যান্ডার্ড সাইজ */
 .site-logo {
-  height: 60px; /* লোগোর হাইট সাইজ অনুযায়ী অ্যাডজাস্ট করতে পারো */
-  object-fit: contain;
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
 }
 
-/* মেনু লিংকগুলোর ডিজাইন */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+/* ডেক্সটপ লিংক স্টাইল এবং আন্ডারলাইন পজিশনিং */
+.main-navbar .navbar-nav .nav-link {
+    color: #0f2c59 !important; /* লোগোর ডার্ক ব্লু */
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    margin: 0 4px;
+    cursor: pointer;
+    position: relative; 
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #333333;
-  font-weight: 700;
-  font-size: 14px;
-  transition: color 0.3s;
+/* ==========================================================================
+   🎯 আন্ডারলাইন মোটা/চিকন এবং স্পেসিং কন্ট্রোল জোন (মেনশন করা অংশ)
+   ========================================================================== */
+.main-navbar .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0; 
+    left: 0;
+    background-color: #8cc63f !important; /* 🟢 লোগোর গ্রিন কালার */
+    transition: width 0.3s ease-in-out; 
+    
+    /* 👇 নিচে এই দুটি ভ্যালু চেঞ্জ করে লাইন মোটা/চিকন বা দূরত্ব ঠিক করুন */
+    height: 2px;         /* 👈 মোটা/চিকন করার জন্য (যেমন: 2px = চিকন, 5px = মোটা) */
+    bottom: -2px;        /* 👈 নিচের গ্যাপ কন্ট্রোল করার জন্য (যেমন: -5px = আরও নিচে নামবে) */
 }
 
-.nav-links a:hover, 
-.nav-links a.active {
-  color: #71a02f; /* সেইম গ্রিন অ্যাকসেন্ট */
-  border-bottom: 2px solid #71a02f;
-  padding-bottom: 5px;
+/* মাউস নিলে এবং একটিভ স্টেটে আন্ডারলাইন শো করার নিয়ম */
+.main-navbar .navbar-nav .nav-link:hover::after,
+.main-navbar .navbar-nav .nav-link.active::after {
+    width: 100%; 
 }
 
-/* ডানপাশের সবুজ বাটন */
+/* হোভার করলে টেক্সটের কালারও গ্রিন হবে */
+.main-navbar .navbar-nav .nav-link:hover {
+    color: #8cc63f !important;
+}
+
+/* ফ্রি অফার অ্যাকশন বাটন ডিজাইন */
 .btn-quote {
-  background-color: #71a02f;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background-color 0.3s;
+    background-color: #0f2c59 !important;
+    border-color: #0f2c59 !important;
+    border-radius: 4px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-quote:hover {
-  background-color: #5c8324;
+    background-color: #1d4480 !important;
+    border-color: #1d4480 !important;
+}
+
+/* 🎯 স্টিকি হেডারের নিচে কন্টেন্ট ঢুকে যাওয়া বন্ধ করার ফিক্স */
+#startseite, 
+#leistungen, 
+#uber-uns, 
+#referenzen, 
+#kontakt,
+#angebot {
+    scroll-margin-top: 110px; /* আপনার হেডারের টোটাল হাইট অনুযায়ী ওপরে গ্যাপ রাখবে */
+}
+
+
+
+
+
+/* ==========================================================================
+   📱 MOBILE & SLIDER RESPONSIVE ZONE
+   ========================================================================== */
+@media (max-width: 991px) {
+    .site-logo {
+        height: 42px; 
+    }
+    
+    .navbar-toggler {
+        cursor: pointer;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none !important;
+    }
+    
+    /* মোবাইলের স্লাইডারে ডেক্সটপের আন্ডারলাইন ইফেক্ট বন্ধ রাখার জন্য */
+    .offcanvas-body .nav-link::after {
+        display: none !important;
+    }
+}
+
+/* মোবাইল অফক্যানভাস স্লাইডার */
+.offcanvas {
+    transition: transform 0.3s ease-in-out;
+    width: 280px !important;
+    z-index: 1100 !important; 
+}
+
+.offcanvas-header .btn-close {
+    cursor: pointer;
+}
+
+/* স্লাইডারের ভেতরের লিংক */
+.offcanvas-body .nav-link {
+    color: #0f2c59 !important;
+    padding: 10px 12px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+    cursor: pointer;
+}
+
+.offcanvas-body .nav-link:hover,
+.offcanvas-body .nav-link.active {
+    background-color: rgba(15, 44, 89, 0.06);
+    color: #0f2c59 !important;
 }

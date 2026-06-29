@@ -21,24 +21,27 @@ function AboutWithForm() {
   };
 
   return (
-    <section className="py-5 bg-white">
+    /* 🎯 এখানে id="uber-uns" যোগ করা হয়েছে যাতে ABOUT US লিঙ্কে ক্লিক করলে এখানে স্ক্রল হয় */
+    <section id="uber-uns" className="py-5 bg-white">
       <div className="container">
-        {/* মোবাইলের অর্ডার ঠিক রাখতে এবং ডেক্সটপে সমান হাইট পেতে align-items-lg-stretch ব্যবহার করা হয়েছে */}
+        {/* মোবাইলের অর্ডার ঠিক রাখতে এবং ডেক্সটপে সমান হাইট পেতে align-items-lg-stretch ব্যবহার করা হয়েছে */}
         <div className="row g-4 g-lg-5 align-items-lg-stretch">
           
           {/* ─── বাম পাশ: ÜBER UNS (ABOUT TEXT) ─── */}
           {/* মোবাইলে এটি ১ নম্বরে থাকবে */}
           <div className="col-12 col-lg-4 d-flex flex-column justify-content-between order-1">
             <div>
-              <span className="text-uppercase fw-bold" style={{ color: '#72b22f', fontSize: '13px', letterSpacing: '1px' }}>
+              {/* 🟢 লোগোর সবুজ কালার (#8cc63f) ম্যাচ করা হলো */}
+              <span className="text-uppercase fw-bold" style={{ color: '#8cc63f', fontSize: '13px', letterSpacing: '1px' }}>
                 ÜBER UNS
               </span>
-              <h3 className="fw-bold mt-1 mb-4" style={{ color: '#0b213a', fontSize: '26px', lineHeight: '1.3' }}>
+              {/* 🔵 টেক্সটের ডার্ক ব্লু কালারটি (#0f2c59) ম্যাচ করা হলো */}
+              <h3 className="fw-bold mt-1 mb-4" style={{ color: '#0f2c59', fontSize: '26px', lineHeight: '1.3' }}>
                 WIR SORGEN FÜR<br />WERTERHALT UND QUALITÄT
               </h3>
               
               <p style={{ fontSize: '13.5px', color: '#4a5568', lineHeight: '1.6' }}>
-                Die S.I.B.A.G Facility Service GmbH steht für professionelle Reinigungs- und Baudienstleistungen. Unser Ziel ist es, Immobilien dauerhaft sauber, gepflegt und wertbeständig zu betreuen.
+                Die S.I.B.A.G Facility Service GmbH steht für professionelle Reinigungs- und Baudienstleistungen. Unser Goal ist es, Immobilien dauerhaft sauber, gepflegt und wertbeständig zu betreuen.
               </p>
               <p style={{ fontSize: '13.5px', color: '#4a5568', lineHeight: '1.6' }} className="mb-4">
                 Mit erfahrenen Mitarbeitern, modernster Technik und höchsten Qualitätsstandards sorgen wir für zufriedene Kunden und langfristige Partnerships.
@@ -55,35 +58,39 @@ function AboutWithForm() {
                 'Zuverlässig & termingerecht'
               ].map((item, idx) => (
                 <li key={idx} className="d-flex align-items-center mb-2" style={{ fontSize: '13.5px', color: '#1a202c', fontWeight: '500' }}>
-                  <span className="me-2 rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style={{ width: '18px', height: '18px', fontSize: '10px', backgroundColor: '#72b22f' }}>✓</span>
+                  {/* 🟢 চেকমার্কের ব্যাকগ্রাউন্ড কালারও ব্র্যান্ড গ্রিন করা হলো */}
+                  <span className="me-2 rounded-circle text-white d-flex align-items-center justify-content-center" style={{ width: '18px', height: '18px', fontSize: '10px', backgroundColor: '#8cc63f' }}>✓</span>
                   {item}
                 </li>
               ))}
             </ul>
           </div>
 
-{/* ─── মাঝখান: ভ্যান এর ইমেজ ─── */}
-{/* মোবাইলে এটি ২ নম্বরে দেখাবে এবং হাইট-উইডথ রেসপন্সিভ থাকবে */}
-<div className="col-12 col-md-6 col-lg-4 order-2 d-flex align-items-center justify-content-center p-3">
- <img
-  src="/ambulence.png"
-  alt="S.I.B.A.G Delivery Van"
-  className="w-100 h-100"
-  style={{
-    objectFit: 'fill', // এটি দিলে ছবি কাটবে না, বক্সের সাথে টেনে ফিট হয়ে যাবে
-    minHeight: '280px',
-    maxHeight: '450px',
-    borderRadius: '20px'
-  }}
-/>
-</div>
+          {/* ─── মাঝখান: ভ্যান এর ইমেজ ─── */}
+          {/* মোবাইলে এটি ২ নম্বরে দেখাবে এবং হাইট-উইডথ রেসপন্সিভ থাকবে */}
+          <div className="col-12 col-md-6 col-lg-4 order-2 d-flex align-items-center justify-content-center p-3">
+            <img
+              src="/ambulence.png"
+              alt="S.I.B.A.G Delivery Van"
+              className="w-100 h-100"
+              style={{
+                objectFit: 'fill', /* এটি দিলে ছবি কাটবে না, বক্সের সাথে টেনে ফিট হয়ে যাবে */
+                minHeight: '280px',
+                maxHeight: '450px',
+                borderRadius: '20px'
+              }}
+            />
+          </div>
 
           {/* ─── ডান পাশ: KOSTENLOSES ANGEBOT FORM ─── */}
           {/* মোবাইলে এটি ৩ নম্বরে থাকবে */}
-          <div className="col-12 col-md-6 col-lg-4 order-3">
-            <div className="p-4 text-white h-100 d-flex flex-column justify-content-between" style={{ backgroundColor: '#0b213a', borderRadius: '8px' }}>
+          {/* 🎯 এখানে id="angebot" যোগ করা হয়েছে যাতে FREE OFFER লিঙ্কে ক্লিক করলে এই ফর্ম বক্সে চলে আসে */}
+          <div id="angebot" className="col-12 col-md-6 col-lg-4 order-3">
+            {/* 🔵 ফর্মের কন্টেইনার ব্যাকগ্রাউন্ড কালার ডার্ক ব্লু (#0f2c59) করা হলো */}
+            <div className="p-4 text-white h-100 d-flex flex-column justify-content-between" style={{ backgroundColor: '#0f2c59', borderRadius: '8px' }}>
               <div>
-                <h5 className="fw-bold mb-1" style={{ fontSize: '16px', color: '#72b22f', letterSpacing: '0.5px' }}>
+                {/* 🟢 টাইটেল কালার ব্র্যান্ড গ্রিন (#8cc63f) করা হলো */}
+                <h5 className="fw-bold mb-1" style={{ fontSize: '16px', color: '#8cc63f', letterSpacing: '0.5px' }}>
                   KOSTENLOSES ANGEBOT ANFORDERN
                 </h5>
                 <p className="opacity-75 mb-4" style={{ fontSize: '12px' }}>
@@ -119,7 +126,8 @@ function AboutWithForm() {
 
                   {/* সাবমিট বাটন */}
                   <div className="col-12 mt-3">
-                    <button type="submit" className="btn w-100 fw-bold text-white text-uppercase d-flex align-items-center justify-content-center gap-2" style={{ backgroundColor: '#72b22f', padding: '12px', fontSize: '13px', border: 'none' }}>
+                    {/* 🟢 বাটনের ব্যাকগ্রাউন্ড কালার ব্র্যান্ড গ্রিন (#8cc63f) করা হলো */}
+                    <button type="submit" className="btn w-100 fw-bold text-white text-uppercase d-flex align-items-center justify-content-center gap-2" style={{ backgroundColor: '#8cc63f', padding: '12px', fontSize: '13px', border: 'none' }}>
                       ANFRAGE SENDEN →
                     </button>
                   </div>
