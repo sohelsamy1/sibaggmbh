@@ -65,7 +65,7 @@ const Footer = () => {
                 <span>📞</span> <span>+49 (0) 176 12345678</span>
               </li>
               <li className="mb-3 opacity-90 d-flex align-items-center justify-content-center justify-content-md-start gap-2">
-                <span>✉️</span> <span>info@sibag-facility.de</span>
+                <span>✉️</span> <span> info@sibaggmbh.de</span>
               </li>
               <li className="mb-3 opacity-90 d-flex align-items-center justify-content-center justify-content-md-start gap-2">
                 <span>📍</span> <span>Musterstraße 1, 12345 Musterstadt</span>

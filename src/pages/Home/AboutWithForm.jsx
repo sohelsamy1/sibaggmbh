@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+// 🚀 EmailJS প্যাকেজ ইম্পোর্ট করা হলো
+import emailjs from '@emailjs/browser';
 
 function AboutWithForm() {
+  // ফর্ম এলিমেন্ট ট্র্যাক করার জন্য ref
+  const form = useRef();
+
   // ফর্ম ডাটা হ্যান্ডেল করার জন্য স্টেট
   const [formData, setFormData] = useState({
     name: '',
@@ -15,13 +20,31 @@ function AboutWithForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // 📧 EmailJS এর মাধ্যমে মেইল পাঠানোর হ্যান্ডলার
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitted Data:', formData);
+
+    // 🎯 নিচে আপনার EmailJS ড্যাশবোর্ড থেকে পাওয়া ৩টি আইডি বসিয়ে দেবেন ভাই
+    emailjs.sendForm(
+      'YOUR_SERVICE_ID',    // এখানে আপনার Service ID বসবে
+      'YOUR_TEMPLATE_ID',   // এখানে আপনার Template ID বসবে
+      form.current,
+      'YOUR_PUBLIC_KEY'     // এখানে আপনার Public Key বসবে
+    )
+    .then((result) => {
+        // মেইল সফলভাবে চলে গেলে জার্মান ভাষায় অ্যালার্ট দেখাবে
+        alert('Anfrage erfolgreich gesendet!'); 
+        
+        // ফর্ম ক্লিয়ার করার জন্য
+        setFormData({ name: '', firma: '', email: '', telefon: '', leistung: '', nachricht: '' });
+        form.current.reset();
+    }, (error) => {
+        alert('Fehler beim Senden, bitte versuchen Sie es erneut.');
+    });
   };
 
   return (
-    /* 🎯 এখানে id="uber-uns" যোগ করা হয়েছে যাতে ABOUT US লিঙ্কে ক্লিক করলে এখানে স্ক্রল হয় */
+    /* 🎯 এখানে id="uber-uns" যোগ করা হয়েছে যাতে ABOUT US লিঙ্কে ক্লিক করলে এখানে স্ক্রল হয় */
     <section id="uber-uns" className="py-5 bg-white">
       <div className="container">
         {/* মোবাইলের অর্ডার ঠিক রাখতে এবং ডেক্সটপে সমান হাইট পেতে align-items-lg-stretch ব্যবহার করা হয়েছে */}
@@ -66,11 +89,11 @@ function AboutWithForm() {
             </ul>
           </div>
 
-          {/* ─── মাঝখান: ভ্যান এর ইমেজ ─── */}
+          {/* ─── can এর ইমেজ ─── */}
           {/* মোবাইলে এটি ২ নম্বরে দেখাবে এবং হাইট-উইডথ রেসপন্সিভ থাকবে */}
           <div className="col-12 col-md-6 col-lg-4 order-2 d-flex align-items-center justify-content-center p-3">
             <img
-              src="/ambulence.png"
+              src="/ambulence.webp"
               alt="S.I.B.A.G Delivery Van"
               className="w-100 h-100"
               style={{
@@ -84,7 +107,7 @@ function AboutWithForm() {
 
           {/* ─── ডান পাশ: KOSTENLOSES ANGEBOT FORM ─── */}
           {/* মোবাইলে এটি ৩ নম্বরে থাকবে */}
-          {/* 🎯 এখানে id="angebot" যোগ করা হয়েছে যাতে FREE OFFER লিঙ্কে ক্লিক করলে এই ফর্ম বক্সে চলে আসে */}
+          {/* 🎯 এখানে id="angebot" যোগ করা হয়েছে যাতে FREE OFFER লিঙ্কে ক্লিক করলে এই ফর্ম বক্সে চলে আসে */}
           <div id="angebot" className="col-12 col-md-6 col-lg-4 order-3">
             {/* 🔵 ফর্মের কন্টেইনার ব্যাকগ্রাউন্ড কালার ডার্ক ব্লু (#0f2c59) করা হলো */}
             <div className="p-4 text-white h-100 d-flex flex-column justify-content-between" style={{ backgroundColor: '#0f2c59', borderRadius: '8px' }}>
@@ -97,31 +120,31 @@ function AboutWithForm() {
                   Wir melden uns schnellstmöglich bei Ihnen!
                 </p>
 
-                {/* ফর্ম এলিমেন্ট শুরু */}
-                <form onSubmit={handleSubmit} className="row g-2">
+                {/* 🎯 ফর্ম এলিমেন্টে ref যোগ করা হয়েছে সাবমিট হ্যান্ডেল করার জন্য */}
+                <form ref={form} onSubmit={handleSubmit} className="row g-2">
                   <div className="col-6">
-                    <input type="text" name="name" className="form-control" placeholder="Ihr Name" style={{ fontSize: '13px', padding: '10px' }} onChange={handleChange} />
+                    <input type="text" name="name" className="form-control" placeholder="Ihr Name" style={{ fontSize: '13px', padding: '10px' }} onChange={handleChange} required />
                   </div>
                   <div className="col-6">
                     <input type="text" name="firma" className="form-control" placeholder="Firma" style={{ fontSize: '13px', padding: '10px' }} onChange={handleChange} />
                   </div>
                   <div className="col-6">
-                    <input type="email" name="email" className="form-control" placeholder="E-Mail" style={{ fontSize: '13px', padding: '10px' }} onChange={handleChange} />
+                    <input type="email" name="email" className="form-control" placeholder="E-Mail" style={{ fontSize: '13px', padding: '10px' }} onChange={handleChange} required />
                   </div>
                   <div className="col-6">
-                    <input type="tel" name="telefon" className="form-control" placeholder="Telefon" style={{ fontSize: '13px', padding: '10px' }} onChange={handleChange} />
+                    <input type="tel" name="telefon" className="form-control" placeholder="Telefon" style={{ fontSize: '13px', padding: '10px' }} onChange={handleChange} required />
                   </div>
                   <div className="col-12">
-                    <select name="leistung" className="form-select" style={{ fontSize: '13px', padding: '10px', color: '#4a5568' }} onChange={handleChange}>
+                    <select name="leistung" className="form-select" style={{ fontSize: '13px', padding: '10px', color: '#4a5568' }} onChange={handleChange} required>
                       <option value="">Leistung auswählen</option>
-                      <option value="gebau">Gebäudereinigung</option>
-                      <option value="bau">Baureinigung</option>
-                      <option value="leist">Bauleistungen</option>
-                      <option value="facility">Facility Service</option>
+                      <option value="Gebäudereinigung">Gebäudereinigung</option>
+                      <option value="Baureinigung">Baureinigung</option>
+                      <option value="Bauleistungen">Bauleistungen</option>
+                      <option value="Facility Service">Facility Service</option>
                     </select>
                   </div>
                   <div className="col-12">
-                    <textarea name="nachricht" className="form-control" rows="3" placeholder="Ihre Nachricht" style={{ fontSize: '13px', padding: '10px' }} onChange={handleChange}></textarea>
+                    <textarea name="nachricht" className="form-control" rows="3" placeholder="Ihre Nachricht" style={{ fontSize: '13px', padding: '10px' }} onChange={handleChange} required></textarea>
                   </div>
 
                   {/* সাবমিট বাটন */}

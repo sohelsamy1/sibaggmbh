@@ -52,18 +52,18 @@ function Header() {
           <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul className="navbar-nav gap-4 fw-bold small text-uppercase">
               {/* 🎯 HOME এর href এখন সরাসরি মেইন ডোমেইন "/" */}
-              <li className="nav-item"><a href="/" className="nav-link active">HOME</a></li>
-              <li className="nav-item"><a href="#leistungen" className="nav-link">SERVICES</a></li>
-              <li className="nav-item"><a href="#uber-uns" className="nav-link">ABOUT US</a></li>
-              <li className="nav-item"><a href="#referenzen" className="nav-link">REFERENCES</a></li>
-              <li className="nav-item"><a href="#kontakt" className="nav-link">CONTACT</a></li>
+              <li className="nav-item"><a href="/" className="nav-link active">STARTSEITE</a></li>
+              <li className="nav-item"><a href="#leistungen" className="nav-link">LEISTUNGEN</a></li>
+              <li className="nav-item"><a href="#uber-uns" className="nav-link">ÜBER UNS</a></li>
+              <li className="nav-item"><a href="#referenzen" className="nav-link">REFERENZEN</a></li>
+              <li className="nav-item"><a href="#kontakt" className="nav-link">KONTAKT</a></li>
             </ul>
           </div>
 
           {/* ডেক্সটপ অ্যাকশন বাটন (ডেক্সটপে ডান পাশে) */}
           <div className="nav-action d-none d-lg-block">
             <a href="#angebot" className="btn btn-quote px-4 py-2 text-white fw-bold">
-              FREE OFFER <span className="ms-1">→</span>
+            GRATIS ANGEBOT <span className="ms-1">→</span>
             </a>
           </div>
 
@@ -89,18 +89,15 @@ function Header() {
         <div className="offcanvas-body d-flex flex-column justify-content-between">
           <ul className="navbar-nav gap-2 fw-bold text-uppercase fs-6">
             {/* 🎯 মোবাইল মেনুতেও HOME এর href এখন সরাসরি মেইন ডোমেইন "/" */}
-            <li className="nav-item" onClick={toggleMenu}><a href="/" className="nav-link active">HOME</a></li>
-            <li className="nav-item" onClick={toggleMenu}><a href="#leistungen" className="nav-link">SERVICES</a></li>
-            <li className="nav-item" onClick={toggleMenu}><a href="#uber-uns" className="nav-link">ABOUT US</a></li>
-            <li className="nav-item" onClick={toggleMenu}><a href="#referenzen" className="nav-link">REFERENCES</a></li>
-            <li className="nav-item" onClick={toggleMenu}><a href="#kontakt" className="nav-link">CONTACT</a></li>
+            <li className="nav-item" onClick={toggleMenu}><a href="/" className="nav-link active">STARTSEITE</a></li>
+            <li className="nav-item" onClick={toggleMenu}><a href="#leistungen" className="nav-link">LEISTUNGEN</a></li>
+            <li className="nav-item" onClick={toggleMenu}><a href="#uber-uns" className="nav-link">ÜBER UNS</a></li>
+            <li className="nav-item" onClick={toggleMenu}><a href="#referenzen" className="nav-link">REFERENZEN</a></li>
+            <li className="nav-item" onClick={toggleMenu}><a href="#kontakt" className="nav-link">KONTAKT</a></li>
           </ul>
 
           <div className="mobile-menu-footer mt-4 border-top pt-3">
-            <a href="#angebot" className="btn btn-quote w-100 py-2.5 text-white fw-bold text-center mb-3" onClick={toggleMenu}>
-              FREE OFFER
-            </a>
-            <div className="mobile-contact-info small text-muted d-flex flex-column gap-1">
+             <div className="mobile-contact-info small text-muted d-flex flex-column gap-1">
               <span>📞 +49 (0) 176 12345678</span>
               <span>✉️ info@sibaggmbh.de</span>
             </div>

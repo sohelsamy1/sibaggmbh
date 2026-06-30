@@ -1,11 +1,18 @@
 import React from 'react';
+// Swiper কম্পোনেন্ট এবং মডিউল ইম্পোর্ট
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+
+// Swiper এর প্রয়োজনীয় CSS ইম্পোর্ট
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const References = () => {
-  // ৬টি কার্ডের ডাটা (হুবহু ছবির টাইটেল অনুযায়ী)
+  // ৬টি কার্ডের ডাটা
   const projectsData = [
     {
       id: 1,
-      image: '/Reference1.webp', // পাবলিক ফোল্ডারে তোমার ছবির পাথ দাও
+      image: '/Reference1.webp',
       titleDE: 'BÜROGEBÄUDE'
     },
     {
@@ -36,29 +43,41 @@ const References = () => {
   ];
 
   return (
-    /* 🎯 এখানে id="referenzen" যোগ করা হয়েছে যাতে REFERENCES লিঙ্কে ক্লিক করলে এখানে স্ক্রল হয় */
     <section id="referenzen" className="py-5 bg-white text-center">
-      <div className="container-fluid px-md-5">
+      {/* 🎯 container-fluid বদলে container করা হলো যাতে হেডার ও ফর্মের দুই পাশের মেইন লাইনের সাথে এলাইনমেন্ট ১০০% মিলে যায় */}
+      <div className="container">
         
         {/* ─── সেকশন হেডার ─── */}
         <div className="row justify-content-center mb-4">
           <div className="col-lg-8">
-            {/* 🟢 লোগোর সবুজ কালার (#8cc63f) এর সাথে এলাইন করা হলো */}
             <span className="text-uppercase fw-bold" style={{ color: '#8cc63f', fontSize: '13px', letterSpacing: '1px' }}>
               REFERENZEN
             </span>
-            {/* 🔵 টেক্সটের ডার্ক ব্লু কালারটি (#0f2c59) ম্যাচ করা হলো */}
-            <h3 className="fw-bold mt-1 mb-3" style={{ color: '#0f2c59', fontSize: '24px', letterSpacing: '0.5px' }}>
+            <h3 className="fw-bold mt-1 mb-4" style={{ color: '#0f2c59', fontSize: '24px', letterSpacing: '0.5px' }}>
               AUSZUG UNSERER PROJEKTE
             </h3>
           </div>
         </div>
 
-        {/* ─── 🃏 কার্ড গ্রিড (ডেক্সটপে ১ লাইনে ৬টি কলাম দেখাবে) ─── */}
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-6 g-3 justify-content-center">
+        {/* ─── 🔄 Swiper স্লাইডার সেকশন ─── */}
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          spaceBetween={20} // কার্ডগুলোর মাঝখানের পারফেক্ট গ্যাপ
+          slidesPerView={1}  // মোবাইলে ১টি দেখাবে
+          loop={true}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            480: { slidesPerView: 2, spaceBetween: 15 },  // ছোট স্ক্রিন
+            768: { slidesPerView: 3, spaceBetween: 20 },  // ট্যাবলেট
+            1024: { slidesPerView: 4, spaceBetween: 20 }, // ছোট ল্যাপটপ
+            1200: { slidesPerView: 5, spaceBetween: 20 }  // 🎯 ডেক্সটপে পারফেক্ট ৫টি কলাম শো হবে মেইন এলাইনমেন্টে
+          }}
+          className="pb-5" // ডট (Pagination) গুলোর জন্য নিচে স্পেস
+        >
           {projectsData.map((project) => (
-            <div key={project.id} className="col">
-              <div className="card h-100 border-0 bg-transparent">
+            <SwiperSlide key={project.id}>
+              <div className="card h-100 border-0 bg-transparent mb-2">
                 
                 {/* ইমেজ কন্টেইনার এবং নিখুঁত বর্ডার রেডিয়াস */}
                 <div 
@@ -67,7 +86,7 @@ const References = () => {
                     borderRadius: '12px', 
                     aspectRatio: '16/10',
                     transition: 'transform 0.2s ease',
-                    cursor: 'pointer' /* হোভার করলে হাতের চিহ্ন দেখাবে */
+                    cursor: 'pointer'
                   }}
                   onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
                   onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
@@ -89,7 +108,7 @@ const References = () => {
                   <h6 
                     className="text-uppercase fw-bold mb-0 text-center" 
                     style={{ 
-                      color: '#0f2c59', /* 🔵 ব্র্যান্ড ডার্ক ব্লু */
+                      color: '#0f2c59',
                       fontSize: '12.5px', 
                       letterSpacing: '0.3px',
                       lineHeight: '1.4'
@@ -100,9 +119,9 @@ const References = () => {
                 </div>
 
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
 
       </div>
     </section>
