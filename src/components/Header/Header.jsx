@@ -11,19 +11,29 @@ function Header() {
   return (
     <header className="site-header">
       {/* ১. টপ বার (Top Bar) - ডেক্সটপের জন্য */}
-      <div className="top-bar py-2 bg-dark text-white d-none d-md-block">
-        <div className="container d-flex justify-content-between align-items-center">
-          <div className="top-left d-flex gap-3 small">
-            <span>🕒 Montag - Freitag: 08:00 - 18:00 Uhr</span>
-            <span>|</span>
-            <span>📞 24h Notdienst auf Anfrage</span>
-          </div>
-          <div className="top-right d-flex gap-3 small">
-            <a href="tel:+4917612345678" className="text-white text-decoration-none">📱 +49 (0) 176 12345678</a>
-            <a href="mailto:info@sibaggmbh.de" className="text-white text-decoration-none">✉️ info@sibaggmbh.de</a>
-          </div>
-        </div>
+   <div className="marquee-wrapper">
+  <div className="marquee-container d-none d-md-block">
+    <div className="marquee-content">
+      {/* প্রথম গ্রুপ */}
+      <div className="marquee-group">
+        <span className="marquee-item">🕒 Montag - Freitag: 08:00 - 18:00 Uhr</span>
+        <span className="marquee-item">📞 24h Notdienst auf Anfrage</span>
+        <span className="marquee-item">📱 Geschäftsführer D. Jovanovic +49 172 6302135</span>
+        <span className="marquee-item">🏢 Hauptbüro 030 629 316 959</span>
+        <span className="marquee-item">✉️ Info.sibaggmbh@web.de</span>
       </div>
+      
+      {/* দ্বিতীয় গ্রুপ (লুপের জন্য) */}
+      <div className="marquee-group">
+        <span className="marquee-item">🕒 Montag - Freitag: 08:00 - 18:00 Uhr</span>
+        <span className="marquee-item">📞 24h Notdienst auf Anfrage</span>
+        <span className="marquee-item">📱 Geschäftsführer D. Jovanovic +49 172 6302135</span>
+        <span className="marquee-item">🏢 Hauptbüro 030 629 316 959</span>
+        <span className="marquee-item">✉️ Info.sibaggmbh@web.de</span>
+      </div>
+    </div>
+  </div>
+</div>
 
       {/* ২. মেইন নেভিগেশন বার (Main Navbar) */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white main-navbar shadow-sm py-2">
@@ -95,13 +105,6 @@ function Header() {
             <li className="nav-item" onClick={toggleMenu}><a href="#referenzen" className="nav-link">REFERENZEN</a></li>
             <li className="nav-item" onClick={toggleMenu}><a href="#kontakt" className="nav-link">KONTAKT</a></li>
           </ul>
-
-          <div className="mobile-menu-footer mt-4 border-top pt-3">
-             <div className="mobile-contact-info small text-muted d-flex flex-column gap-1">
-              <span>📞 +49 (0) 176 12345678</span>
-              <span>✉️ info@sibaggmbh.de</span>
-            </div>
-          </div>
         </div>
       </div>
       
