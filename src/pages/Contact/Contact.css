@@ -1,0 +1,10 @@
+/* ড্রপডাউন এবং ইনপুট ফিল্ড কাস্টমাইজেশন */
+.form-control:focus {
+    border-color: #8cc63f !important;
+    box-shadow: 0 0 0 0.2rem rgba(140, 198, 63, 0.25) !important;
+}
+
+/* বাটন হভার ইফেক্ট */
+.btn-submit:hover {
+    background-color: #7ab237 !important;
+}

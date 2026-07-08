@@ -4,7 +4,7 @@ import Service from './Service';
 import Features from './Features';
 import AboutWithForm from './AboutWithForm';
 import References from './References';
-import Footer from "../../components/Footer/Footer"; // তোমার স্ট্রাকচার অনুযায়ী পাথ ঠিক করলাম
+
 
 function Home() {
   return (
@@ -14,7 +14,7 @@ function Home() {
       <Features />
       <AboutWithForm />
       <References />
-      <Footer />
+     
     </main>
   );
 }
