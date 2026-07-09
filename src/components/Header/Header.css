@@ -1,81 +1,26 @@
 /* ==========================================================================
-   🎨 GLOBAL & DESKTOP STYLING (💯% Pure Sticky + Underline Hover)
+   GLOBAL & DESKTOP STYLING
    ========================================================================== */
 
-/* পুরো স্ক্রিন জুড়ে কালো ব্যাকগ্রাউন্ড দেওয়ার জন্য */
-.marquee-wrapper {
-  width: 100%;
-  background-color: #000000;
-}
+.marquee-wrapper { width: 100%; background-color: #000000; }
+.marquee-container { overflow: hidden; width: calc(100% - 145px); margin: 0 auto; background-color: #000; padding: 10px 0; display: flex; }
+.marquee-content { display: flex; white-space: nowrap; animation: marqueeContinuous 32s linear infinite; width: max-content; will-change: transform; }
+.marquee-group { display: flex; margin-right: 750px; }
+.marquee-item { margin-right: 40px; color: #ffffff; font-size: 14px; flex-shrink: 0; }
 
-/* কন্টেইনার - আপনার দেওয়া নির্দিষ্ট উইথ এবং মাঝখানে রাখার জন্য */
-.marquee-container {
-  overflow: hidden;
-  width: calc(100% - 145px); 
-  margin: 0 auto;           
-  background-color: #000;
-  padding: 10px 0;
-  display: flex;
-}
-
-/* মারকিউ কন্টেন্ট */
-.marquee-content {
-  display: flex;
-  white-space: nowrap;
-  animation: marqueeContinuous 32s linear infinite;
-  width: max-content;
-  will-change: transform;
-}
-
-/* গ্রুপগুলোর মাঝে গ্যাপ */
-.marquee-group {
-  display: flex;
-  margin-right: 750px; 
-}
-
-/* প্রতিটি আইটেমের স্টাইল */
-.marquee-item {
-  margin-right: 40px; 
-  color: #ffffff;
-  font-size: 14px;
-  flex-shrink: 0;
-}
-
-/* অ্যানিমেশন কি-ফ্রেমস */
 @keyframes marqueeContinuous {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
+/* স্টিকি হেডার কনফিগারেশন */
+.site-header { width: 100%; position: sticky; top: 0; z-index: 1050; background-color: #ffffff; }
+.main-navbar { position: sticky !important; top: 0 !important; background-color: #ffffff !important; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05) !important; }
 
+.site-logo { height: 55px; width: auto; object-fit: contain; cursor: pointer; }
 
-
-.site-header {
-    width: 100%;
-    position: sticky; 
-    top: 0;
-    z-index: 1050; 
-    background-color: #ffffff;
-}
-
-.main-navbar {
-    position: sticky !important;
-    top: 0 !important;
-    background-color: #ffffff !important; 
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05) !important; 
-}
-
-/* লোগোর স্ট্যান্ডার্ড সাইজ */
-.site-logo {
-    height: 55px;
-    width: auto;
-    object-fit: contain;
-    cursor: pointer;
-}
-
-/* ডেক্সটপ লিংক স্টাইল এবং আন্ডারলাইন পজিশনিং */
 .main-navbar .navbar-nav .nav-link {
-    color: #0f2c59 !important; /* লোগোর ডার্ক ব্লু */
+    color: #0f2c59 !important;
     letter-spacing: 0.5px;
     padding: 0.5rem 0;
     margin: 0 4px;
@@ -83,97 +28,59 @@
     position: relative; 
 }
 
-/* ==========================================================================
-   🎯 আন্ডারলাইন মোটা/চিকন এবং স্পেসিং কন্ট্রোল জোন (মেনশন করা অংশ)
-   ========================================================================== */
+/* আন্ডারলাইন ইফেক্ট */
 .main-navbar .navbar-nav .nav-link::after {
     content: '';
     position: absolute;
     width: 0; 
     left: 0;
-    background-color: #8cc63f !important; /* 🟢 লোগোর গ্রিন কালার */
+    background-color: #8cc63f !important;
     transition: width 0.3s ease-in-out; 
-    
-    /* 👇 নিচে এই দুটি ভ্যালু চেঞ্জ করে লাইন মোটা/চিকন বা দূরত্ব ঠিক করুন */
-    height: 2px;         /* 👈 মোটা/চিকন করার জন্য (যেমন: 2px = চিকন, 5px = মোটা) */
-    bottom: -2px;        /* 👈 নিচের গ্যাপ কন্ট্রোল করার জন্য (যেমন: -5px = আরও নিচে নামবে) */
+    height: 2px;
+    bottom: -2px;
 }
 
-/* মাউস নিলে এবং একটিভ স্টেটে আন্ডারলাইন শো করার নিয়ম */
 .main-navbar .navbar-nav .nav-link:hover::after,
-.main-navbar .navbar-nav .nav-link.active::after {
-    width: 100%; 
-}
+.main-navbar .navbar-nav .nav-link.active::after { width: 100%; }
+.main-navbar .navbar-nav .nav-link:hover { color: #8cc63f !important; }
 
-/* হোভার করলে টেক্সটের কালারও গ্রিন হবে */
-.main-navbar .navbar-nav .nav-link:hover {
-    color: #8cc63f !important;
-}
+.btn-quote { background-color: #0f2c59 !important; border-color: #0f2c59 !important; border-radius: 4px; font-size: 14px; letter-spacing: 0.5px; transition: all 0.3s ease; cursor: pointer; }
+.btn-quote:hover { background-color: #1d4480 !important; border-color: #1d4480 !important; }
 
-/* ফ্রি অফার অ্যাকশন বাটন ডিজাইন */
-.btn-quote {
-    background-color: #0f2c59 !important;
-    border-color: #0f2c59 !important;
-    border-radius: 4px;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.btn-quote:hover {
-    background-color: #1d4480 !important;
-    border-color: #1d4480 !important;
-}
-
-/* 🎯 স্টিকি হেডারের নিচে কন্টেন্ট ঢুকে যাওয়া বন্ধ করার ফিক্স */
-#startseite, 
-#leistungen, 
-#uber-uns, 
-#referenzen, 
-#kontakt,
-#angebot {
-    scroll-margin-top: 110px; /* আপনার হেডারের টোটাল হাইট অনুযায়ী ওপরে গ্যাপ রাখবে */
-}
-
-
-
-
+#startseite, #leistungen, #uber-uns, #referenzen, #kontakt, #angebot { scroll-margin-top: 110px; }
 
 /* ==========================================================================
-   📱 MOBILE & SLIDER RESPONSIVE ZONE
+   MOBILE & SLIDER RESPONSIVE ZONE (ব্লার ফিক্সড)
    ========================================================================== */
-@media (max-width: 991px) {
-    .site-logo {
-        height: 42px; 
-    }
-    
-    .navbar-toggler {
-        cursor: pointer;
-    }
 
-    .navbar-toggler:focus {
-        box-shadow: none !important;
-    }
-    
-    /* মোবাইলের স্লাইডারে ডেক্সটপের আন্ডারলাইন ইফেক্ট বন্ধ রাখার জন্য */
-    .offcanvas-body .nav-link::after {
-        display: none !important;
-    }
+@media (max-width: 991px) {
+    .site-logo { height: 42px; }
+    .navbar-toggler { cursor: pointer; }
+    .navbar-toggler:focus { box-shadow: none !important; }
+    .offcanvas-body .nav-link::after { display: none !important; }
 }
 
-/* মোবাইল অফক্যানভাস স্লাইডার */
 .offcanvas {
     transition: transform 0.3s ease-in-out;
     width: 280px !important;
-    z-index: 1100 !important; 
+    z-index: 1060 !important;
 }
 
-.offcanvas-header .btn-close {
-    cursor: pointer;
+/* ব্লার ফিক্স: ব্যাকড্রপ পুরোপুরি ডিজেবল করা হয়েছে */
+.offcanvas-backdrop {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
-/* স্লাইডারের ভেতরের লিংক */
+/* মেনু ওপেন থাকাকালীন বডির স্ক্রল যেন আটকে না যায় */
+body.offcanvas-open {
+    overflow-y: auto !important;
+}
+
+.offcanvas-header .btn-close { cursor: pointer; }
+
 .offcanvas-body .nav-link {
     color: #0f2c59 !important;
     padding: 10px 12px;

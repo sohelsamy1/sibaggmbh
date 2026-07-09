@@ -4,10 +4,10 @@ function AboutSection() {
   return (
     <section id="uber-uns" className="py-5 bg-white">
       <div className="container">
-        {/* কন্টেন্টকে সেন্টারে রাখার জন্য justify-content-center */}
-        <div className="row g-4 g-lg-5 align-items-center justify-content-center">
+        {/* align-items-center দিলে ইমেজ এবং টেক্সট একে অপরের সাথে সেন্টারে থাকবে */}
+        <div className="row g-4 g-lg-5 align-items-center">
           
-          {/* ─── বাম পাশ: টেক্সট কন্টেন্ট (Width বাড়ানো হলো) ─── */}
+          {/* বাম পাশ: টেক্সট কন্টেন্ট */}
           <div className="col-12 col-lg-6">
             <span className="text-uppercase fw-bold" style={{ color: '#8cc63f', fontSize: '14px', letterSpacing: '1.5px' }}>
               ÜBER UNS
@@ -17,11 +17,11 @@ function AboutSection() {
               <span style={{ color: '#0f2c59' }}>WERTERHALT UND QUALITÄT</span>
             </h2>
             
-            <p style={{ fontSize: '16px', color: '#4a5568', lineHeight: '1.7' }} className="mb-4">
+            <p style={{ fontSize: '16px', color: '#4a5568', lineHeight: '1.7', textAlign: 'justify' }} className="mb-4">
               Die S.I.B.A.G Facility Service GmbH steht für professionelle Reinigungs- und Baudienstleistungen. Unser Ziel ist es, Immobilien dauerhaft sauber, gepflegt und wertbeständig zu betreuen. Mit erfahrenen Mitarbeitern, modernster Technik und höchsten Qualitätsstandards sorgen wir für zufriedene Kunden und langfristige Partnerschaften.
             </p>
 
-            {/* চেকমার্ক লিস্ট */}
+            {/* চেকমার্ক লিস্ট - এখানেও ভালো অ্যালাইনমেন্ট নিশ্চিত করা হয়েছে */}
             <ul className="list-unstyled mb-0">
               {[
                 'Erfahrenes & geschultes Personal',
@@ -31,15 +31,15 @@ function AboutSection() {
                 'Zuverlässig & termingerecht'
               ].map((item, idx) => (
                 <li key={idx} className="d-flex align-items-center mb-3" style={{ fontSize: '15px', color: '#1a202c', fontWeight: '500' }}>
-                  <span className="me-3 rounded-circle text-white d-flex align-items-center justify-content-center" style={{ width: '22px', height: '22px', fontSize: '12px', backgroundColor: '#8cc63f' }}>✓</span>
+                  <span className="me-3 rounded-circle text-white d-flex align-items-center justify-content-center" style={{ width: '22px', height: '22px', fontSize: '12px', backgroundColor: '#8cc63f', flexShrink: 0 }}>✓</span>
                   {item}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* ─── ডান পাশ: ইমেজ (রেসপন্সিভ হাইট ও শ্যাডো) ─── */}
-          <div className="col-12 col-md-8 col-lg-5">
+          {/* ডান পাশ: ইমেজ */}
+          <div className="col-12 col-lg-6">
             <div className="shadow-lg overflow-hidden" style={{ borderRadius: '25px' }}>
               <img
                 src="/ambulence.webp"

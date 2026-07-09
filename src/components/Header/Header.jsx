@@ -1,31 +1,30 @@
-import React, { useState } from 'react';
-// 🎯 পেইজ নেভিগেশনের জন্য React Router এর Link ইম্পোর্ট করা হলো
-import { Link } from 'react-router-dom'; 
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const closeMenu = () => {
+    // বুটস্ট্র্যাপের ক্লোজ বাটনকে ম্যানুয়ালি ক্লিক করা (সবচেয়ে কার্যকর উপায়)
+    const closeButton = document.querySelector('.offcanvas .btn-close');
+    if (closeButton) {
+      closeButton.click();
+    }
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    // ব্যাকড্রপ বা ব্লার লেয়ার জোরপূর্বক মুছে ফেলা
+    setTimeout(() => {
+      document.querySelectorAll('.offcanvas-backdrop').forEach(el => el.remove());
+      document.body.classList.remove('offcanvas-open');
+      document.body.style.overflow = 'auto';
+      document.body.style.paddingRight = '0px';
+    }, 150);
   };
 
   return (
     <header className="site-header">
-      {/* ১. টপ বার (Top Bar) - ডেক্সটপের জন্য */}
+      {/* টপ মারকিউ বার */}
       <div className="marquee-wrapper">
         <div className="marquee-container d-none d-md-block">
           <div className="marquee-content">
-            {/* প্রথম গ্রুপ */}
-            <div className="marquee-group">
-              <span className="marquee-item">🕒 Montag - Freitag: 08:00 - 18:00 Uhr</span>
-              <span className="marquee-item">📞 24h Notdienst auf Anfrage</span>
-              <span className="marquee-item">📱 Geschäftsführer D. Jovanovic +49 172 6302135</span>
-              <span className="marquee-item">🏢 Hauptbüro 030 629 316 959</span>
-              <span className="marquee-item">✉️ Info.sibaggmbh@web.de</span>
-            </div>
-            
-            {/* দ্বিতীয় গ্রুপ (লুপের জন্য) */}
             <div className="marquee-group">
               <span className="marquee-item">🕒 Montag - Freitag: 08:00 - 18:00 Uhr</span>
               <span className="marquee-item">📞 24h Notdienst auf Anfrage</span>
@@ -37,81 +36,66 @@ function Header() {
         </div>
       </div>
 
-      {/* ২. মেইন নেভিগেশন বার (Main Navbar) */}
+      {/* মেইন নেভিগেশন বার */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white main-navbar shadow-sm py-2">
         <div className="container justify-content-between flex-nowrap">
-          
-          {/* 🎯 লোগো এরিয়া (মোবাইলে একদম বাম পাশে থাকবে) */}
           <div className="logo-area d-flex align-items-center">
-            {/* লোগোতেও ক্লিক করলে যেন মেইন ডোমেইনে যায় সেজন্য Link ব্যবহার করা হলো */}
             <Link to="/">
-              <img 
-                src="/logo.webp" 
-                alt="S.I.B.A.G Logo" 
-                className="site-logo" 
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }} 
-              />
-              <span className="dummy-logo" style={{ display: 'none', fontWeight: 'bold', fontSize: '24px', color: '#0f2c59' }}>
-                S.I.B.A.G
-              </span>
+              <img src="/logo.webp" alt="S.I.B.A.G Logo" className="site-logo" />
             </Link>
           </div>
 
-          {/* ডেক্সটপ মেনু লিংকস (ল্যাপটপে মাঝখানে এলাইন হবে) */}
           <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul className="navbar-nav gap-4 fw-bold small text-uppercase">
-              <li className="nav-item"><Link to="/" className="nav-link active">STARTSEITE</Link></li>
-              <li className="nav-item"><a href="#leistungen" className="nav-link">LEISTUNGEN</a></li>
-              <li className="nav-item"><a href="#uber-uns" className="nav-link">ÜBER UNS</a></li>
-              {/* 🎯 হ্যাশ রিমুভ করে ডিরেক্ট পেজ লিংক করা হলো */}
+              <li className="nav-item"><Link to="/" className="nav-link">STARTSEITE</Link></li>
+              <li className="nav-item"><Link to="/leistungen" className="nav-link">LEISTUNGEN</Link></li>
+              <li className="nav-item"><Link to="/uber-uns" className="nav-link">ÜBER UNS</Link></li>
               <li className="nav-item"><Link to="/referenzen" className="nav-link">REFERENZEN</Link></li>
               <li className="nav-item"><Link to="/contact" className="nav-link">KONTAKT</Link></li>
             </ul>
           </div>
 
-          {/* ডেক্সটপ অ্যাকশন বাটন (ডেক্সটপে ডান পাশে) */}
           <div className="nav-action d-none d-lg-block">
-            <a href="#angebot" className="btn btn-quote px-4 py-2 text-white fw-bold">
-              GRATIS ANGEBOT <span className="ms-1">→</span>
+            <a href="#angebot" className="btn btn-quote px-4 py-2 text-white fw-bold" style={{ backgroundColor: '#0f2c59' }}>
+              GRATIS ANGEBOT →
             </a>
           </div>
 
-          {/* 🎯 টগল বাটন (মোবাইলে একদম ডান পাশে থাকবে) */}
           <button 
             className="navbar-toggler border-0 pe-0" 
             type="button" 
-            onClick={toggleMenu}
-            aria-label="Toggle navigation"
+            data-bs-toggle="offcanvas" 
+            data-bs-target="#offcanvasNavbar" 
+            aria-controls="offcanvasNavbar"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
         </div>
       </nav>
 
-      {/* ৩. 📱 মোবাইল স্লাইডার মেনু (বাম দিক থেকে আসবে) */}
-      <div className={`offcanvas offcanvas-start ${isOpen ? 'show' : ''}`} tabIndex="-1" style={{ visibility: isOpen ? 'visible' : 'hidden' }}>
+      {/* মোবাইল স্লাইডার মেনু */}
+      <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar">
         <div className="offcanvas-header bg-light border-bottom">
           <h5 className="offcanvas-title fw-bold" style={{ color: '#0f2c59' }}>S.I.B.A.G</h5>
-          <button type="button" className="btn-close text-reset" onClick={toggleMenu} aria-label="Close"></button>
+          <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div className="offcanvas-body d-flex flex-column justify-content-between">
-          <ul className="navbar-nav gap-2 fw-bold text-uppercase fs-6">
-            <li className="nav-item" onClick={toggleMenu}><Link to="/" className="nav-link active">STARTSEITE</Link></li>
-            <li className="nav-item" onClick={toggleMenu}><a href="#leistungen" className="nav-link">LEISTUNGEN</a></li>
-            <li className="nav-item" onClick={toggleMenu}><a href="#uber-uns" className="nav-link">ÜBER UNS</a></li>
-            {/* 🎯 মোবাইল স্লাইডার মেনুতেও সরাসরি পেজ লিংক সেট করা হলো */}
-            <li className="nav-item" onClick={toggleMenu}><Link to="/referenzen" className="nav-link">REFERENZEN</Link></li>
-            <li className="nav-item" onClick={toggleMenu}><a href="#kontakt" className="nav-link">KONTAKT</a></li>
+        
+        <div className="offcanvas-body">
+          <ul className="navbar-nav flex-grow-1 pe-3 gap-2 fw-bold text-uppercase fs-6">
+            <li className="nav-item"><Link to="/" className="nav-link" onClick={closeMenu}>STARTSEITE</Link></li>
+            <li className="nav-item"><Link to="/leistungen" className="nav-link" onClick={closeMenu}>LEISTUNGEN</Link></li>
+            <li className="nav-item"><Link to="/uber-uns" className="nav-link" onClick={closeMenu}>ÜBER UNS</Link></li>
+            <li className="nav-item"><Link to="/referenzen" className="nav-link" onClick={closeMenu}>REFERENZEN</Link></li>
+            <li className="nav-item"><Link to="/contact" className="nav-link" onClick={closeMenu}>KONTAKT</Link></li>
           </ul>
+          
+          <div className="mt-4">
+            <Link to="/contact" className="btn w-100 fw-bold" style={{ backgroundColor: '#0f2c59', color: '#fff' }} onClick={closeMenu}>
+              GRATIS ANGEBOT →
+            </Link>
+          </div>
         </div>
       </div>
-      
-      {/* স্লাইডার ওপেন ব্যাকড্রপ */}
-      {isOpen && <div className="offcanvas-backdrop fade show" onClick={toggleMenu}></div>}
     </header>
   );
 }

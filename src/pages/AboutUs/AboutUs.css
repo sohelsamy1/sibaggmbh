@@ -1,0 +1,58 @@
+/* Hero Section (আগের কোড) */
+.about-hero {
+    height: 80vh;
+    background: linear-gradient(to right, rgba(11, 26, 46, 0.9), rgba(11, 26, 46, 0.3)), 
+                url('/Aboutus/aboutbaner.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.about-hero-title {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.about-hero-text {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.feature-icon {
+    font-size: 24px;
+    color: #8cc63f; /* ব্র্যান্ড গ্রিন */
+}
+
+.feature-text {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.about-footer-text {
+    color: #8cc63f;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* নতুন সেকশনের স্টাইল ও স্পেসিং */
+.about-bottom-info {
+    padding: 60px 0; /* ওপরে এবং নিচে জায়গা তৈরি করবে */
+    background-color: #ffffff; /* ব্যাকগ্রাউন্ড সাদা */
+    color: #333;
+    margin-top: 0; /* Hero সেকশনের সাথে মার্জিন কন্ট্রোল করুন */
+}
+
+.about-bottom-info h4 {
+    color: #0f2c59;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-bottom-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto; /* টেক্সট সেন্টার এবং অ্যালাইন করার জন্য */
+}

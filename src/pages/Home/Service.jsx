@@ -1,161 +1,67 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Service() {
-  // ৪টি কার্ডের সম্পূর্ণ আর্টিকেল ডাটা
+function HomeService() {
   const services = [
-    {
-      title: 'GEBÄUDEREINIGUNG',
-      image: '/card1.webp',
-      // বিল্ডিং ক্লিনিং আইকন
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
-        </svg>
-      ),
-      points: [
-        'Unterhaltsreinigung',
-        'Büroreinigung',
-        'Treppenhausreinigung',
-        'Praxisreinigung',
-        'Industriereinigung',
-        'Sonderreinigung'
-      ]
-    },
-    {
-      title: 'BAUREINIGUNG',
-      image: '/card2.webp',
-      // ক্রেন/কন্সট্রাকশন আইকন
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M6 22V2M6 5h12l-3 4 3 4H6" />
-          <path d="M2 22h8" />
-        </svg>
-      ),
-      points: [
-        'Baugrobreinigung',
-        'Bauzwischenreinigung',
-        'Bauendreinigung',
-        'Baustellenreinigung',
-        'Entsorgung von Bauschutt'
-      ]
-    },
-    {
-      title: 'BAULEISTUNGEN',
-      image: '/card3.webp',
-      // গ্রিড/কন্সট্রাকশন স্ট্রাকচার আইকন
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
-        </svg>
-      ),
-      points: [
-        'Rohbauarbeiten',
-        'Schalungsarbeiten',
-        'Betonarbeiten',
-        'Eisenflechten & Bewehrung',
-        'Maurerarbeiten',
-        'Allgemeine Bauarbeiten'
-      ]
-    },
-    {
-      title: 'FACILITY SERVICE',
-      image: '/card4.webp',
-      // হোম/ফ্যাসিলিটি আইকন
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          <polyline points="9 22 9 12 15 12 15 22" />
-        </svg>
-      ),
-      points: [
-        'Hausmeisterservice',
-        'Objektbetreuung',
-        'Kleinreparaturen',
-        'Winterdienst',
-        'Außenanlagenpflege',
-        'Kontrollgänge'
-      ]
-    }
+    { title: 'GEBÄUDEREINIGUNG', image: '/card1.webp', icon: '🏢', points: ['Unterhaltsreinigung', 'Büroreinigung', 'Treppenhausreinigung', 'Praxisreinigung', 'Industriereinigung', 'Sonderreinigung'] },
+    { title: 'BAUREINIGUNG', image: '/card2.webp', icon: '🏗️', points: ['Baugrobreinigung', 'Bauzwischenreinigung', 'Bauendreinigung', 'Baustellenreinigung', 'Entsorgung von Bauschutt'] },
+    { title: 'BAULEISTUNGEN', image: '/card3.webp', icon: '🛠️', points: ['Rohbauarbeiten', 'Schalungsarbeiten', 'Betonarbeiten', 'Eisenflechten & Bewehrung', 'Maurerarbeiten', 'Allgemeine Bauarbeiten'] },
+    { title: 'FACILITY SERVICE', image: '/card4.webp', icon: '🏠', points: ['Hausmeisterservice', 'Objektbetreuung', 'Kleinreparaturen', 'Winterdienst', 'Außenanlagenpflege', 'Kontrollgänge'] }
   ];
 
   return (
-    /* 🎯 এখানে id="leistungen" দেওয়া হয়েছে, যা হেডারের SERVICES লিঙ্কের সাথে কানেক্টেড */
     <section id="leistungen" className="py-5 bg-white">
       <div className="container">
-        
-        {/* সেকশন টপ হেডিং */}
         <div className="text-center mb-5">
-          {/* 🟢 ব্র্যান্ড গ্রিন কালার (#8cc63f) করা হলো */}
-          <span className="text-uppercase fw-bold" style={{ color: '#8cc63f', fontSize: '13px', letterSpacing: '1px' }}>
-            UNSERE LEISTUNGEN
-          </span>
-          {/* 🔵 ব্র্যান্ড ডার্ক ব্লু কালার (#0f2c59) করা হলো */}
-          <h2 className="fw-bold mt-1 mb-4" style={{ color: '#0f2c59', fontSize: '28px', letterSpacing: '0.5px' }}>
-            KOMPETENZ IN JEDEM BEREICH
-          </h2>
+          <span className="text-uppercase fw-bold" style={{ color: '#8cc63f', fontSize: '13px', letterSpacing: '1px' }}>UNSERE LEISTUNGEN</span>
+          <h2 className="fw-bold mt-1 mb-4" style={{ color: '#0f2c59', fontSize: '28px' }}>KOMPETENZ IN JEDEM BEREICH</h2>
           <div className="mx-auto" style={{ width: '45px', height: '3px', backgroundColor: '#8cc63f' }}></div>
         </div>
 
-        {/* কার্ডের রো এবং কলাম */}
         <div className="row g-4">
           {services.map((service, index) => (
             <div key={index} className="col-12 col-md-6 col-lg-3">
-              <div className="card h-100 border-0 shadow-sm position-relative overflow-visible bg-light" style={{ borderRadius: '6px', paddingBottom: '20px' }}>
+              <div className="card h-100 border-0 shadow-sm bg-light d-flex flex-column position-relative">
+                {/* ইমেজ */}
+                <img src={service.image} alt={service.title} className="w-100" style={{ height: '180px', objectFit: 'cover' }} />
                 
-                {/* ইমেজ কন্টেইনার */}
-                <div className="position-relative" style={{ height: '180px' }}>
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
-                    className="w-100 h-100" 
-                    style={{ objectFit: 'cover', borderRadius: '6px 6px 0 0' }}
-                  />
-                  
-                  {/* গোল গাঢ় নীল আইকন ব্যাজ */}
-                  <div 
-                    className="position-absolute start-50 translate-middle rounded-circle d-flex align-items-center justify-content-center text-white"
-                    style={{ 
-                      width: '56px', 
-                      height: '56px', 
-                      bottom: '-28px', 
-                      backgroundColor: '#0f2c59', /* 🔵 ব্র্যান্ড ডার্ক ব্লু */
-                      boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
-                      zIndex: '2'
-                    }}
-                  >
-                    {service.icon}
-                  </div>
+                {/* গোল আইকন */}
+                <div className="position-absolute d-flex align-items-center justify-content-center" 
+                     style={{ top: '140px', left: '50%', transform: 'translateX(-50%)', width: '50px', height: '50px', backgroundColor: '#0f2c59', color: '#fff', borderRadius: '50%', fontSize: '20px', border: '3px solid #f8f9fa', zIndex: 1 }}>
+                  {service.icon}
                 </div>
 
-                {/* 🃏 কার্ড বডি ও কন্টেন্ট */}
-                <div className="card-body pt-5 px-4">
-                  <h5 className="fw-bold text-center mb-4 mt-1" style={{ color: '#0f2c59', fontSize: '15px', letterSpacing: '0.5px' }}>
-                    {service.title}
-                  </h5>
-                  
-                  {/* চেকমার্ক যুক্ত লিস্ট */}
-                  <ul className="list-unstyled mb-0" style={{ paddingLeft: '5px' }}>
+                <div className="card-body pt-5 d-flex flex-column">
+                  <h5 className="fw-bold text-center mb-4 mt-2" style={{ color: '#0f2c59', fontSize: '15px' }}>{service.title}</h5>
+                  <ul className="list-unstyled mb-4" style={{ paddingLeft: '5px' }}>
                     {service.points.map((point, pIndex) => (
-                      <li key={pIndex} className="d-flex align-items-start mb-2" style={{ fontSize: '13px', color: '#333', lineHeight: '1.4' }}>
-                        {/* 🟢 চেকমার্কের কালার ব্র্যান্ড গ্রিন (#8cc63f) করা হলো */}
-                        <span className="me-2 fw-bold" style={{ color: '#8cc63f', fontSize: '12px' }}>✓</span>
-                        <span>{point}</span>
+                      <li key={pIndex} className="mb-2" style={{ fontSize: '13px', color: '#333' }}>
+                        <span className="me-2" style={{ color: '#8cc63f' }}>✓</span> {point}
                       </li>
                     ))}
                   </ul>
+                  
+                  {/* আপডেট করা বাটন: অ্যারো আইকন ডান দিকে */}
+                  <div className="mt-auto">
+                    <Link to="/leistungen" className="btn w-100 fw-bold d-flex align-items-center justify-content-center" 
+                      style={{ 
+                        backgroundColor: '#8cc63f', 
+                        color: '#fff', 
+                        padding: '10px 15px', 
+                        borderRadius: '4px',
+                        fontSize: '14px'
+                      }}>
+                      MEHR ERFAHREN <span className="ms-2">→</span>
+                    </Link>
+                  </div>
                 </div>
-
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
 }
 
-/* 🎯 ফাইলের নাম অনুযায়ী export default Service করা হলো */
-export default Service;
+export default HomeService;
