@@ -1,17 +1,50 @@
-/* ==========================================================================
-   GLOBAL & DESKTOP STYLING
-   ========================================================================== */
+/* পুরো স্ক্রিন জুড়ে কালো ব্যাকগ্রাউন্ড দেওয়ার জন্য */
+.marquee-wrapper {
+  width: 100%;
+  background-color: #000000;
+}
 
-.marquee-wrapper { width: 100%; background-color: #000000; }
-.marquee-container { overflow: hidden; width: calc(100% - 145px); margin: 0 auto; background-color: #000; padding: 10px 0; display: flex; }
-.marquee-content { display: flex; white-space: nowrap; animation: marqueeContinuous 32s linear infinite; width: max-content; will-change: transform; }
-.marquee-group { display: flex; margin-right: 750px; }
-.marquee-item { margin-right: 40px; color: #ffffff; font-size: 14px; flex-shrink: 0; }
+/* কন্টেইনার - আপনার দেওয়া নির্দিষ্ট উইথ এবং মাঝখানে রাখার জন্য */
+.marquee-container {
+  overflow: hidden;
+  width: calc(100% - 145px); 
+  margin: 0 auto;           
+  background-color: #000;
+  padding: 10px 0;
+  display: flex;
+}
 
+/* মারকিউ কন্টেন্ট */
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marqueeContinuous 32s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+
+/* গ্রুপগুলোর মাঝে গ্যাপ */
+.marquee-group {
+  display: flex;
+  margin-right: 750px; 
+}
+
+/* প্রতিটি আইটেমের স্টাইল */
+.marquee-item {
+  margin-right: 40px; 
+  color: #ffffff;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* অ্যানিমেশন কি-ফ্রেমস */
 @keyframes marqueeContinuous {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+
+
 
 /* স্টিকি হেডার কনফিগারেশন */
 .site-header { width: 100%; position: sticky; top: 0; z-index: 1050; background-color: #ffffff; }

@@ -1,12 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import Select from 'react-select'; // react-select ইমপোর্ট
+import Select from 'react-select';
 import './Contact.css';
 
 const ContactPage = () => {
   const form = useRef();
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(''); // সাকসেস মেসেজ স্টেট
 
-  // ড্রপডাউন অপশন
   const options = [
     { value: 'Gebäudereinigung', label: 'Gebäudereinigung' },
     { value: 'Baureinigung', label: 'Baureinigung' },
@@ -14,7 +15,6 @@ const ContactPage = () => {
     { value: 'Facility Service', label: 'Facility Service' }
   ];
 
-  // react-select কাস্টম স্টাইল
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
@@ -25,16 +25,26 @@ const ContactPage = () => {
     }),
     option: (provided, state) => ({
       ...provided,
-      backgroundColor: state.isFocused ? '#8cc63f' : 'white',
-      color: state.isFocused ? 'white' : 'black',
+      backgroundColor: state.isFocused ? '#d1ebb8' : 'white',
+      color: state.isFocused ? '#000000' : 'black',
       cursor: 'pointer'
     })
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-      .then((result) => alert("Nachricht erfolgreich gesendet!"), (error) => alert("Fehler!"));
+
+    emailjs.sendForm('service_9svjmvk', 'template_2w2k0u8', form.current, 'aOb8C8-CcBUEkBa0p')
+      .then((result) => {
+        setSuccessMessage("Nachricht erfolgreich gesendet!"); // সাকসেস মেসেজ সেট
+        form.current.reset(); // ফর্ম খালি হবে
+        setSelectedOption(null); // ড্রপডাউন খালি হবে
+        
+        // ৫ সেকেন্ড পর মেসেজটি অদৃশ্য হয়ে যাবে
+        setTimeout(() => setSuccessMessage(''), 5000);
+      }, (error) => {
+        alert("Fehler beim Senden: " + error.text);
+      });
   };
 
   return (
@@ -54,25 +64,40 @@ const ContactPage = () => {
                 <div className="col-md-6"><input type="email" name="email" className="form-control" placeholder="E-Mail" required /></div>
                 <div className="col-md-6"><input type="tel" name="telefon" className="form-control" placeholder="Telefon" required /></div>
                 
+                {/* নতুন ৩টি ফিল্ড */}
+                <div className="col-md-6"><input type="text" name="stadt_plz" className="form-control" placeholder="Stadt / PLZ" /></div>
+                <div className="col-md-6"><input type="date" name="datum" className="form-control" placeholder="Datum" /></div>
+                <div className="col-12"><input type="text" name="dringlichkeit" className="form-control" placeholder="Dringlichkeit (z.B. Sofort, Diese Woche)" /></div>
+                
                 {/* React-Select ড্রপডাউন */}
                 <div className="col-12">
                   <Select 
-                    name="leistung"
                     options={options} 
                     styles={customStyles} 
                     placeholder="Leistung auswählen"
                     isSearchable={false}
+                    onChange={(option) => setSelectedOption(option)}
                   />
+                  <input type="hidden" name="leistung" value={selectedOption ? selectedOption.value : ''} />
                 </div>
                 
                 <div className="col-12"><textarea name="nachricht" className="form-control" rows="4" placeholder="Ihre Nachricht" required></textarea></div>
+                
                 <div className="col-12">
-                  <button type="submit" className="btn text-white w-100 fw-bold btn-submit" style={{ backgroundColor: '#8cc63f', padding: '12px' }}>
+                  <button type="submit" className="btn text-white w-100 fw-bold" style={{ backgroundColor: '#8cc63f', padding: '12px' }}>
                     ANFRAGE SENDEN →
                   </button>
                 </div>
               </div>
             </form>
+
+            {/* সাকসেস মেসেজ (বক্স ছাড়া) */}
+            {successMessage && (
+              <div className="mt-3 text-center fw-bold" style={{ color: '#8cc63f' }}>
+                {successMessage}
+              </div>
+            )}
+
           </div>
         </div>
 
@@ -87,7 +112,6 @@ const ContactPage = () => {
             <div className="mb-4">
               <div className="h5 mb-2">📞 Telefon</div>
               <p className="opacity-75">+49 172 6302135</p>
-              <p className="small opacity-50 fst-italic">24-hour emergency service on request</p>
             </div>
             <div className="mb-4">
               <div className="h5 mb-2">✉️ E-Mail</div>
@@ -106,8 +130,8 @@ const ContactPage = () => {
         <div className="col-12">
           <div className="shadow-sm overflow-hidden" style={{ borderRadius: '8px', height: '400px' }}>
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.665796066224!2d13.348630315783515!3d52.48496464627256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85055375c3d25%3A0xe54d318e87491d9d!2sEbersstra%C3%9Fe+61%2C+10827+Berlin!5e0!3m2!1sbn!2sde!4v1655655555555" 
-              width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy">
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.528355606627!2d13.348637476579606!3d52.48395567205423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a850772477c77d%3A0x6b45a6c3f6e1f062!2sEbersstra%C3%9Fe%2061%2C%2010827%20Berlin!5e0!3m2!1sde!2sde!4v1680000000000!5m2!1sde!2sde" 
+              width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" title="Location Map">
             </iframe>
           </div>
         </div>

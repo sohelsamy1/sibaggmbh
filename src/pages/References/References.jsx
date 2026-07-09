@@ -1,5 +1,10 @@
 import React from 'react';
-
+// স্লাইডারের জন্য প্রয়োজনীয় ইমপোর্ট
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import './References.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
 const References = () => {
   // ৮টি মেইন প্রজেক্ট কার্ডের ডাটা
   const projects = [
@@ -191,7 +196,59 @@ const References = () => {
         </div>
       </div>
 
-      {/* ─── ৪. নিচের প্রফেশনাল ইনফোগ্রাফিক্স বার ─── */}
+    {/* ৪. নতুন স্লাইডার সেকশন */}
+
+    <div className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
+      <div className="container">
+        <h5 className="fw-bold mb-4 text-center" style={{ color: '#0f2c59', marginBottom: '40px' }}>
+          AUSZUG UNSERER PROJEKTE
+        </h5>
+
+        <Swiper 
+          modules={[Autoplay, Pagination]} 
+          spaceBetween={25} 
+          slidesPerView={5} 
+          loop={true} 
+          autoplay={{ delay: 2500, disableOnInteraction: false }} 
+          pagination={{ clickable: true }}
+          style={{ paddingBottom: '50px' }} 
+          breakpoints={{ 
+            320: { slidesPerView: 1 }, 
+            576: { slidesPerView: 2 }, 
+            768: { slidesPerView: 3 }, 
+            1024: { slidesPerView: 5 } 
+          }}
+        >
+          {/* ইমেজ ডাটাগুলো আপনার প্রজেক্টের সাথে মিলিয়ে নিন */}
+          {[
+            { title: 'BÜROGEBÄUDE', src: '/Reference1.webp' },
+            { title: 'WOHNANLAGEN', src: '/Reference2.webp' },
+            { title: 'ROHBAU & BAUARBEITEN', src: '/Reference3.webp' },
+            { title: 'INDUSTRIE & GEWERBE', src: '/Reference4.webp' },
+            { title: 'PRAXEN & KANZLEIEN', src: '/Reference5.webp' },
+            { title: 'EINKAUFSZENTREN', src: '/Reference6.webp' }
+          ].map((p, i) => (
+            <SwiperSlide key={i}>
+              <div className="card border-0 shadow-sm overflow-hidden" style={{ borderRadius: '12px', height: '240px' }}>
+                <img 
+                  src={p.src} 
+                  alt={p.title} 
+                  style={{ width: '100%', height: '170px', objectFit: 'cover' }} 
+                />
+                <div className="p-3 text-center d-flex align-items-center justify-content-center" style={{ height: '70px', backgroundColor: '#ffffff' }}>
+                  <h6 style={{ fontSize: '11px', color: '#0f2c59', fontWeight: '800', margin: 0, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    {p.title}
+                  </h6>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
+
+
+      {/* ─── 5. নিচের প্রফেশনাল ইনফোগ্রাফিক্স বার ─── */}
       <div className="container-fluid py-4 text-white" style={{ backgroundColor: '#0b1d37' }}>
         <div className="container">
           <div className="row align-items-center g-3 text-center text-md-start">
@@ -219,7 +276,9 @@ const References = () => {
       </div>
 
     </section>
+    
   );
 };
+
 
 export default References;
