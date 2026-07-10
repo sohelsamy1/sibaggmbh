@@ -49,6 +49,58 @@ const ContactPage = () => {
 
   return (
     <div className="container py-5" style={{ fontFamily: 'sans-serif' }}>
+
+    
+     {/* সেকশন মার্জিন: marginTop ও marginBottom inline add করা হয়েছে */}
+      <section className="py-5" style={{ backgroundColor: '#ffffff', fontFamily: 'sans-serif', marginTop: '-70px', marginBottom: '0px' }}>
+        {/* container এর মাধ্যমে সাইড অ্যালাইনমেন্ট ঠিক রাখা হয়েছে */}
+        <div className="container" style={{ paddingLeft: '0px', paddingRight: '0px' }}> 
+          <div className="row g-0 text-white shadow-lg" style={{ backgroundColor: '#0f2c59', borderRadius: '8px' }}>
+            <div className="col-12 p-4 p-md-5">
+              <div className="row align-items-center">
+                
+                {/* বাম পাশে: কন্টাক্ট ডিটেইলস */}
+                <div className="col-md-7 mb-4 mb-md-0">
+                  <h3 className="fw-bold mb-4" style={{ color: '#8cc63f', borderBottom: '2px solid #8cc63f', display: 'inline-block' }}>KONTAKT</h3>
+                  <div className="row" style={{ fontSize: '15px' }}>
+                    <div className="col-sm-6 mb-3">
+                      <p className="mb-1 opacity-50">📍 Adresse</p>
+                      <strong className="d-block">Ebersstraße 61, 10827 Berlin</strong>
+                    </div>
+                    <div className="col-sm-6 mb-3">
+                      <p className="mb-1 opacity-50">📞 Telefon</p>
+                      <strong className="d-block">+49 172 6302135</strong>
+                    </div>
+                    <div className="col-sm-6 mb-0">
+                      <p className="mb-1 opacity-50">✉️ E-Mail</p>
+                      <strong className="d-block">Info.sibaggmbh@web.de</strong>
+                    </div>
+                    <div className="col-sm-6 mb-0">
+                      <p className="mb-1 opacity-50">🕒 Bürozeiten</p>
+                      <strong className="d-block">Mo - Fr: 8:00 - 18:00 Uhr</strong>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ডান পাশে: ব্র্যান্ডিং ইনফো */}
+                <div className="col-md-5 text-md-end text-center mt-4 mt-md-0 border-start-md border-secondary">
+                  <div className="fw-bold h2 mb-2" style={{ color: '#ffffff' }}>
+                    S.I.B.A.G
+                  </div>
+                  <div className="fw-bold mb-3" style={{ color: '#8cc63f', letterSpacing: '1px' }}>
+                    FACILITY SERVICE GMBH
+                  </div>
+                  <div className="small opacity-50 px-3" style={{ fontSize: '11px', lineHeight: '1.8', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '15px' }}>
+                    BAULEISTUNGEN • GEBÄUDEREINIGUNG • BAUREINIGUNG • FACILITY SERVICE
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="row g-4 align-items-stretch">
         
         {/* বাম পাশ: কন্টাক্ট ফর্ম */}
@@ -101,41 +153,16 @@ const ContactPage = () => {
           </div>
         </div>
 
-        {/* ডান পাশ: কন্টাক্ট ইনফো */}
+        {/* ডান পাশ: ম্যাপ সেকশন  */}
         <div className="col-12 col-lg-5">
-          <div className="p-4 p-md-5 h-100 text-white" style={{ backgroundColor: '#0f2c59', borderRadius: '8px' }}>
-            <h3 className="fw-bold mb-4" style={{ color: '#8cc63f' }}>KONTAKT</h3>
-            <div className="mb-4">
-              <div className="h5 mb-2">📍 Adresse</div>
-              <p className="opacity-75">Ebersstraße 61, 10827 Berlin-Tempelhof-Schöneberg district</p>
-            </div>
-            <div className="mb-4">
-              <div className="h5 mb-2">📞 Telefon</div>
-              <p className="opacity-75">+49 172 6302135</p>
-            </div>
-            <div className="mb-4">
-              <div className="h5 mb-2">✉️ E-Mail</div>
-              <p className="opacity-75">Info.sibaggmbh@web.de</p>
-            </div>
-            <div>
-              <div className="h5 mb-2">🕒 Bürozeiten</div>
-              <p className="opacity-75">Monday - Friday: 8:00 AM - 6:00 PM</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ম্যাপ সেকশন */}
-      <div className="row mt-5">
-        <div className="col-12">
-          <div className="shadow-sm overflow-hidden" style={{ borderRadius: '8px', height: '400px' }}>
+          <div className="shadow-sm overflow-hidden" style={{ borderRadius: '8px', height: '700px' }}>
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.528355606627!2d13.348637476579606!3d52.48395567205423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a850772477c77d%3A0x6b45a6c3f6e1f062!2sEbersstra%C3%9Fe%2061%2C%2010827%20Berlin!5e0!3m2!1sde!2sde!4v1680000000000!5m2!1sde!2sde" 
               width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" title="Location Map">
             </iframe>
-          </div>
+         </div>
         </div>
-      </div>
+      </div>    
     </div>
   );
 };

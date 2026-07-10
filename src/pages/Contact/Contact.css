@@ -1,3 +1,28 @@
+/* কন্টাক্ট সেকশনের মার্জিন কন্ট্রোল */
+.contact-info-row {
+  margin-top: 10px !important;
+  margin-bottom: 50px !important;
+}
+
+/* কন্টাক্ট বক্স স্টাইলিং */
+.contact-box {
+  background-color: #0f2c59;
+  border-radius: 8px;
+  transition: transform 0.3s ease; /* হালকা ইফেক্ট */
+}
+
+/* শিরোনামের কালার */
+.contact-title {
+  color: #8cc63f;
+}
+
+/* আইটেমের মধ্যকার দূরত্ব */
+.contact-item p {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+
 /* ড্রপডাউন এবং ইনপুট ফিল্ড কাস্টমাইজেশন */
 .form-control:focus {
     border-color: #8cc63f !important;

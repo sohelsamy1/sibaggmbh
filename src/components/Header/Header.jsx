@@ -61,14 +61,14 @@ function Header() {
               <li className="nav-item"><Link to="/leistungen" className="nav-link">LEISTUNGEN</Link></li>
               <li className="nav-item"><Link to="/uber-uns" className="nav-link">ÜBER UNS</Link></li>
               <li className="nav-item"><Link to="/referenzen" className="nav-link">REFERENZEN</Link></li>
-              <li className="nav-item"><Link to="/contact" className="nav-link">KONTAKT</Link></li>
+              <li className="nav-item"><Link to="/kontakt" className="nav-link">KONTAKT</Link></li>
             </ul>
           </div>
 
           <div className="nav-action d-none d-lg-block">
-            <a href="#angebot" className="btn btn-quote px-4 py-2 text-white fw-bold" style={{ backgroundColor: '#0f2c59' }}>
+            <Link to="/kontakt" className="btn btn-quote px-4 py-2 text-white fw-bold" style={{ backgroundColor: '#0f2c59' }}>
               GRATIS ANGEBOT →
-            </a>
+            </Link>
           </div>
 
           <button 

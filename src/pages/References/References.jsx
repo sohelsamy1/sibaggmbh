@@ -42,6 +42,7 @@ const References = () => {
   ];
 
   return (
+
     <section className="py-4" style={{ backgroundColor: '#ffffff', fontFamily: 'sans-serif' }}>
       
       {/* ─── ১. টপ হেডার সেকশন (অ্যালাইনমেন্ট ফিক্সড) ─── */}
@@ -276,7 +277,7 @@ const References = () => {
       </div>
 
     </section>
-    
+  
   );
 };
 

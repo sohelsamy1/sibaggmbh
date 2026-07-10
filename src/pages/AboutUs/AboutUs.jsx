@@ -3,46 +3,48 @@ import './AboutUs.css';
 
 function AboutUs() {
   return (
-    <>
-      <section className="about-hero">
-        <div className="container h-100">
-          <div className="row h-100 align-items-center">
-            <div className="col-lg-7 text-white">
-              <h2 className="about-hero-title mb-4">
-                Die S.I.B.A.G Facility Service GmbH steht für Qualität, Zuverlässigkeit und Kompetenz.
-              </h2>
-              <p className="about-hero-text mb-4">
-                Mit langjähriger Erfahrung, einem starken Team und modernster Technik realisieren wir Projekte termingerecht und professionell.
-              </p>
-              <div className="about-features">
-                {[
-                  { icon: '👤', text: 'ERFAHRENES TEAM' },
-                  { icon: '🛡️', text: 'QUALITÄT & SICHERHEIT' },
-                  { icon: '⚙️', text: 'MODERNE TECHNIK' },
-                  { icon: '🤝', text: 'ZUVERLÄSSIG & FAIR' }
-                ].map((item, idx) => (
-                  <div key={idx} className="feature-item d-flex align-items-center mb-3">
-                    <span className="feature-icon me-3">{item.icon}</span>
-                    <span className="feature-text">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-              <h3 className="about-footer-text mt-4">Gemeinsam bauen wir die Zukunft.</h3>
-            </div>
+    <div className="about-page">
+      {/* হিরো সেকশন: এবার আরও পরিষ্কার এবং বড় ফন্ট */}
+      <section className="about-hero-modern">
+        <div className="container">
+          <div className="hero-content">
+            <h1 className="display-3 fw-bolder text-white">Über Uns</h1>
+            <p className="hero-subtext">Ihr Partner für Exzellenz in Facility Service & Bauwesen.</p>
           </div>
         </div>
       </section>
 
-      {/* নতুন সেকশন */}
-      <section className="about-bottom-info">
-        <div className="container text-center">
-          <h4 className="mb-3">Warum S.I.B.A.G?</h4>
-          <p className="px-lg-5">
-            Wir sind Ihr zuverlässiger Partner in Berlin. Von der professionellen Baureinigung bis hin zum komplexen Facility Management – wir garantieren höchste Standards und individuelle Betreuung für Ihre Immobilien.
-          </p>
+      {/* কন্টেন্ট সেকশন: পরিষ্কার কার্ড বেসড ডিজাইন */}
+      <section className="about-content py-5">
+        <div className="container">
+          <div className="row align-items-center g-5">
+            <div className="col-lg-5">
+              <div className="about-image-wrapper">
+                <img src="/ambulence.webp" alt="S.I.B.A.G" className="img-fluid" />
+              </div>
+            </div>
+            <div className="col-lg-7">
+              <div className="about-text-box">
+                <h2 className="mb-4">S.I.B.A.G – Qualität mit System</h2>
+                <p className="mb-4 text-secondary">
+                  Wir setzen neue Maßstäbe in der Immobilienbetreuung. Unsere langjährige Erfahrung kombiniert mit modernster Technik sorgt für nachhaltige Ergebnisse, die überzeugen.
+                </p>
+                <div className="highlight-grid">
+                  <div className="highlight-item">
+                    <h5>Vision</h5>
+                    <p>Führender Anbieter für moderne Gebäudetechnik in Berlin.</p>
+                  </div>
+                  <div className="highlight-item">
+                    <h5>Mission</h5>
+                    <p>Werterhalt und Effizienz für jedes Objekt.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

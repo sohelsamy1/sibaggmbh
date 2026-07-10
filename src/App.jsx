@@ -23,7 +23,7 @@ function App() {
         <Route path="/uber-uns" element={<AboutUs />} />
         
         {/* Contact পেজ */}
-        <Route path="/contact" element={<Contact />} /> 
+        <Route path="/kontakt" element={<Contact />} /> 
       </Routes>
       <Footer />
     </Router>
