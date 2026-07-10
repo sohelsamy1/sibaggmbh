@@ -56,18 +56,26 @@ const Footer = () => {
                 </ul>
              
               {/* ট্যাক্স আইডি সেকশন - গ্যাপ ঠিক করে দেওয়া হয়েছে */}
-                  <div style={{ fontSize: '14px', color: '#a0aec0', marginTop: '-5px' }}>
-                    <div className="d-flex gap-2 mb-1">
-                      <span style={{ width: '90px' }}>Umsatz ID Nr:</span>
-                      <span className="text-white">DE463530931</span>
-                    </div>
-                    <div className="d-flex gap-2">
-                      <span style={{ width: '90px' }}>Steuern Nr:</span>
-                      <span className="text-white">29/533/31003</span>
-                    </div>
-                  </div>
+           <div style={{ 
+                fontSize: '14px', 
+                color: '#a0aec0', 
+                lineHeight: '1.6', 
+                marginTop: '-9px', // এখানে মানটি বাড়িয়ে বা কমিয়ে পজিশন অ্যাডজাস্ট করুন
+                position: 'relative', // এটি পজিশনিং ঠিক রাখতে সাহায্য করবে
+                zIndex: 1 
+              }}>
+                <div style={{ display: 'block' }}>
+                  Umsatz ID Nr:&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span className="text-white">DE463530931</span>
+                </div>
+                <div style={{ display: 'block' }}>
+                  Steuern Nr: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span className="text-white">29/533/31003</span>
+                </div>
               </div>
 
+
+          </div>
         </div>
       </div>
     </footer>

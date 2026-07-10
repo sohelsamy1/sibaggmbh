@@ -100,7 +100,7 @@ function Header() {
           </ul>
           
           <div className="mt-4">
-            <Link to="/contact" className="btn w-100 fw-bold" style={{ backgroundColor: '#0f2c59', color: '#fff' }} onClick={closeMenu}>
+            <Link to="/kontakt" className="btn w-100 fw-bold" style={{ backgroundColor: '#0f2c59', color: '#fff' }} onClick={closeMenu}>
               GRATIS ANGEBOT →
             </Link>
           </div>
