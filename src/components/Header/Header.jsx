@@ -96,7 +96,7 @@ function Header() {
             <li className="nav-item"><Link to="/leistungen" className="nav-link" onClick={closeMenu}>LEISTUNGEN</Link></li>
             <li className="nav-item"><Link to="/uber-uns" className="nav-link" onClick={closeMenu}>ÜBER UNS</Link></li>
             <li className="nav-item"><Link to="/referenzen" className="nav-link" onClick={closeMenu}>REFERENZEN</Link></li>
-            <li className="nav-item"><Link to="/contact" className="nav-link" onClick={closeMenu}>KONTAKT</Link></li>
+            <li className="nav-item"><Link to="/kontakt" className="nav-link" onClick={closeMenu}>KONTAKT</Link></li>
           </ul>
           
           <div className="mt-4">

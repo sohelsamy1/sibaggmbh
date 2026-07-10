@@ -56,7 +56,7 @@ function Leistungen() {
                       ))}
                     </ul>
                     <div className="mt-auto pt-3">
-                      <Link to="/contact" className="btn w-100" style={{ backgroundColor: '#8cc63f', color: '#fff', fontWeight: '600' }}>
+                      <Link to="/kontakt" className="btn w-100" style={{ backgroundColor: '#8cc63f', color: '#fff', fontWeight: '600' }}>
                         ANFRAGE SENDEN
                       </Link>
                     </div>

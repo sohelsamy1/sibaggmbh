@@ -40,21 +40,33 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* ৪. KONTAKT (এলাইনমেন্ট ঠিক করা হয়েছে) */}
-          <div className="col-12 col-md-3">
-            <h6 className="text-uppercase fw-bold mb-3" style={{ color: '#8cc63f', fontSize: '15px' }}>KONTAKT</h6>
-            <ul className="list-unstyled ps-0" style={{ fontSize: '14px' }}>
-              <li className="mb-2 d-flex align-items-start justify-content-center justify-content-md-start gap-2">
-                <span>📞</span> <span>+49 172 6302135</span>
-              </li>
-              <li className="mb-2 d-flex align-items-start justify-content-center justify-content-md-start gap-2">
-                <span>✉️</span> <span>Info.sibaggmbh@web.de</span>
-              </li>
-              <li className="mb-2 d-flex align-items-start justify-content-center justify-content-md-start gap-2">
-                <span>📍</span> <span>Ebersstraße 61, 10827 Berlin-Bezirk Tempelhof-Schöneberg</span>
-              </li>
-            </ul>
-          </div>
+          {/* ৪. KONTAKT (স্মার্ট অ্যালাইনমেন্ট) */}
+              <div className="col-12 col-md-3">
+                <h6 className="text-uppercase fw-bold mb-3" style={{ color: '#8cc63f', fontSize: '15px' }}>KONTAKT</h6>
+                <ul className="list-unstyled ps-0" style={{ fontSize: '14px' }}>
+                  <li className="mb-2 d-flex align-items-start justify-content-center justify-content-md-start gap-2">
+                    <span>📞</span> <span>+49 172 6302135</span>
+                  </li>
+                  <li className="mb-2 d-flex align-items-start justify-content-center justify-content-md-start gap-2">
+                    <span>✉️</span> <span>Info.sibaggmbh@web.de</span>
+                  </li>
+                  <li className="mb-2 d-flex align-items-start justify-content-center justify-content-md-start gap-2">
+                    <span>📍</span> <span>Ebersstraße 61, 10827 Berlin</span>
+                  </li>
+                </ul>
+             
+              {/* ট্যাক্স আইডি সেকশন - গ্যাপ ঠিক করে দেওয়া হয়েছে */}
+                  <div style={{ fontSize: '14px', color: '#a0aec0', marginTop: '-5px' }}>
+                    <div className="d-flex gap-2 mb-1">
+                      <span style={{ width: '90px' }}>Umsatz ID Nr:</span>
+                      <span className="text-white">DE463530931</span>
+                    </div>
+                    <div className="d-flex gap-2">
+                      <span style={{ width: '90px' }}>Steuern Nr:</span>
+                      <span className="text-white">29/533/31003</span>
+                    </div>
+                  </div>
+              </div>
 
         </div>
       </div>
