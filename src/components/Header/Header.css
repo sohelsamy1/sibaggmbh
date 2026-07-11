@@ -1,16 +1,17 @@
-/* পুরো স্ক্রিন জুড়ে কালো ব্যাকগ্রাউন্ড দেওয়ার জন্য */
+/* পুরো স্ক্রিন জুড়ে কালো ব্যাকগ্রাউন্ড দেওয়ার জন্য */
 .marquee-wrapper {
   width: 100%;
   background-color: #000000;
 }
 
-/* কন্টেইনার - আপনার দেওয়া নির্দিষ্ট উইথ এবং মাঝখানে রাখার জন্য */
+/* কন্টেইনার - মার্জিন এবং অ্যালাইনমেন্ট ঠিক রাখার জন্য */
 .marquee-container {
   overflow: hidden;
-  width: calc(100% - 145px); 
+  width: 100%; 
+  max-width: 1200px;
   margin: 0 auto;           
   background-color: #000;
-  padding: 10px 0;
+  padding: 10px 15px; /* প্যাডিং ঠিক রাখা হয়েছে */
   display: flex;
 }
 
@@ -43,12 +44,21 @@
   100% { transform: translateX(-50%); }
 }
 
-
-
-
 /* স্টিকি হেডার কনফিগারেশন */
 .site-header { width: 100%; position: sticky; top: 0; z-index: 1050; background-color: #ffffff; }
-.main-navbar { position: sticky !important; top: 0 !important; background-color: #ffffff !important; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05) !important; }
+
+/* মেইন নেভিগেশন বার - বুটস্ট্র্যাপ কন্টেইনার অ্যালাইনমেন্ট */
+.main-navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-navbar { 
+  position: sticky !important; 
+  top: 0 !important; 
+  background-color: #ffffff !important; 
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05) !important; 
+}
 
 .site-logo { height: 55px; width: auto; object-fit: contain; cursor: pointer; }
 
@@ -83,8 +93,8 @@
 #startseite, #leistungen, #uber-uns, #referenzen, #kontakt, #angebot { scroll-margin-top: 110px; }
 
 /* ==========================================================================
-   MOBILE & SLIDER RESPONSIVE ZONE (ব্লার ফিক্সড)
-   ========================================================================== */
+    MOBILE & SLIDER RESPONSIVE ZONE
+    ========================================================================== */
 
 @media (max-width: 991px) {
     .site-logo { height: 42px; }
@@ -99,7 +109,7 @@
     z-index: 1060 !important;
 }
 
-/* ব্লার ফিক্স: ব্যাকড্রপ পুরোপুরি ডিজেবল করা হয়েছে */
+/* ব্লার ফিক্স */
 .offcanvas-backdrop {
     display: none !important;
     opacity: 0 !important;
@@ -107,7 +117,6 @@
     pointer-events: none !important;
 }
 
-/* মেনু ওপেন থাকাকালীন বডির স্ক্রল যেন আটকে না যায় */
 body.offcanvas-open {
     overflow-y: auto !important;
 }

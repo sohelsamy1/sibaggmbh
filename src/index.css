@@ -1,0 +1,29 @@
+/* গ্লোবাল মার্জিন কন্ট্রোল */
+:root {
+  --site-max-width: 1200px;
+  --site-padding: 15px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* সব কন্টেইনারকে এক লাইনে আনা */
+.container {
+  width: 100%;
+  max-width: var(--site-max-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--site-padding) !important;
+  padding-right: var(--site-padding) !important;
+}
+
+
+/* মোবাইলের জন্য আলাদা মার্জিন */
+@media (max-width: 767px) {
+  :root {
+    --site-padding: 10px; /* মোবাইলের জন্য ছোট মার্জিন */
+  }
+}

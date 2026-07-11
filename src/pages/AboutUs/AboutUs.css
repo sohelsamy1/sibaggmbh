@@ -24,10 +24,10 @@
 
 /* ইমেজ বক্স স্টাইল */
 .about-image-wrapper {
-  background: #f8f9fa;
+  background: #f1f5f9;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0);
 }
 
 .about-image-wrapper img {

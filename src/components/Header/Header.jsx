@@ -4,13 +4,10 @@ import './Header.css';
 
 function Header() {
   const closeMenu = () => {
-    // বুটস্ট্র্যাপের ক্লোজ বাটনকে ম্যানুয়ালি ক্লিক করা (সবচেয়ে কার্যকর উপায়)
     const closeButton = document.querySelector('.offcanvas .btn-close');
     if (closeButton) {
       closeButton.click();
     }
-
-    // ব্যাকড্রপ বা ব্লার লেয়ার জোরপূর্বক মুছে ফেলা
     setTimeout(() => {
       document.querySelectorAll('.offcanvas-backdrop').forEach(el => el.remove());
       document.body.classList.remove('offcanvas-open');
@@ -22,38 +19,48 @@ function Header() {
   return (
     <header className="site-header">
       {/* টপ মারকিউ বার */}
-       <div className="marquee-wrapper">
-  <div className="marquee-container d-none d-md-block">
-    <div className="marquee-content">
-      {/* প্রথম গ্রুপ */}
-      <div className="marquee-group">
-        <span className="marquee-item">🕒 Montag - Freitag: 08:00 - 18:00 Uhr</span>
-        <span className="marquee-item">📞 24h Notdienst auf Anfrage</span>
-        <span className="marquee-item">📱 Geschäftsführer D. Jovanovic +49 172 6302135</span>
-        <span className="marquee-item">🏢 Hauptbüro 030 629 316 959</span>
-        <span className="marquee-item">✉️ Info.sibaggmbh@web.de</span>
+      <div className="marquee-wrapper">
+        <div className="container">
+          <div className="marquee-container d-none d-md-block">
+            <div className="marquee-content">
+              <div className="marquee-group">
+                <span className="marquee-item">🕒 Montag - Freitag: 08:00 - 18:00 Uhr</span>
+                <span className="marquee-item">📞 24h Notdienst auf Anfrage</span>
+                <span className="marquee-item">📱 Geschäftsführer D. Jovanovic +49 172 6302135</span>
+                <span className="marquee-item">🏢 Hauptbüro 030 629 316 959</span>
+                <span className="marquee-item">✉️ Info.sibaggmbh@web.de</span>
+              </div>
+              <div className="marquee-group">
+                <span className="marquee-item">🕒 Montag - Freitag: 08:00 - 18:00 Uhr</span>
+                <span className="marquee-item">📞 24h Notdienst auf Anfrage</span>
+                <span className="marquee-item">📱 Geschäftsführer D. Jovanovic +49 172 6302135</span>
+                <span className="marquee-item">🏢 Hauptbüro 030 629 316 959</span>
+                <span className="marquee-item">✉️ Info.sibaggmbh@web.de</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      {/* দ্বিতীয় গ্রুপ (লুপের জন্য) */}
-      <div className="marquee-group">
-        <span className="marquee-item">🕒 Montag - Freitag: 08:00 - 18:00 Uhr</span>
-        <span className="marquee-item">📞 24h Notdienst auf Anfrage</span>
-        <span className="marquee-item">📱 Geschäftsführer D. Jovanovic +49 172 6302135</span>
-        <span className="marquee-item">🏢 Hauptbüro 030 629 316 959</span>
-        <span className="marquee-item">✉️ Info.sibaggmbh@web.de</span>
-      </div>
-    </div>
-  </div>
-</div>
 
       {/* মেইন নেভিগেশন বার */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white main-navbar shadow-sm py-2">
-        <div className="container justify-content-between flex-nowrap">
+        {/* container ব্যবহার করা হয়েছে যাতে সব স্ক্রিনে একই মার্জিন থাকে */}
+        <div className="container">
           <div className="logo-area d-flex align-items-center">
             <Link to="/">
               <img src="/logo.webp" alt="S.I.B.A.G Logo" className="site-logo" />
             </Link>
           </div>
+
+          <button 
+            className="navbar-toggler border-0 pe-0" 
+            type="button" 
+            data-bs-toggle="offcanvas" 
+            data-bs-target="#offcanvasNavbar" 
+            aria-controls="offcanvasNavbar"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
           <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul className="navbar-nav gap-4 fw-bold small text-uppercase">
@@ -70,16 +77,6 @@ function Header() {
               GRATIS ANGEBOT →
             </Link>
           </div>
-
-          <button 
-            className="navbar-toggler border-0 pe-0" 
-            type="button" 
-            data-bs-toggle="offcanvas" 
-            data-bs-target="#offcanvasNavbar" 
-            aria-controls="offcanvasNavbar"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
         </div>
       </nav>
 
@@ -89,7 +86,6 @@ function Header() {
           <h5 className="offcanvas-title fw-bold" style={{ color: '#0f2c59' }}>S.I.B.A.G</h5>
           <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        
         <div className="offcanvas-body">
           <ul className="navbar-nav flex-grow-1 pe-3 gap-2 fw-bold text-uppercase fs-6">
             <li className="nav-item"><Link to="/" className="nav-link" onClick={closeMenu}>STARTSEITE</Link></li>
@@ -98,7 +94,6 @@ function Header() {
             <li className="nav-item"><Link to="/referenzen" className="nav-link" onClick={closeMenu}>REFERENZEN</Link></li>
             <li className="nav-item"><Link to="/kontakt" className="nav-link" onClick={closeMenu}>KONTAKT</Link></li>
           </ul>
-          
           <div className="mt-4">
             <Link to="/kontakt" className="btn w-100 fw-bold" style={{ backgroundColor: '#0f2c59', color: '#fff' }} onClick={closeMenu}>
               GRATIS ANGEBOT →
