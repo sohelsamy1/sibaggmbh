@@ -1,10 +1,12 @@
 import React from 'react';
-// স্লাইডারের জন্য প্রয়োজনীয় ইমপোর্ট
+// স্লাইডারের জন্য প্রয়োজনীয় ইমপোর্ট
+import { Helmet } from 'react-helmet-async';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import './References.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
+
 const References = () => {
   // ৮টি মেইন প্রজেক্ট কার্ডের ডাটা
   const projects = [
@@ -42,12 +44,18 @@ const References = () => {
   ];
 
   return (
-
     <section className="py-4" style={{ backgroundColor: '#ffffff', fontFamily: 'sans-serif' }}>
+      <Helmet>
+        <title>Unsere Referenzen | Professionelle Bau- und Reinigungsleistungen in Berlin | S.I.B.A.G</title>
+        <meta name="description" content="Entdecken Sie die erfolgreich abgeschlossenen Projekte der S.I.B.A.G Facility Service GmbH. Ihr zuverlässiger Partner für Bauarbeiten und Gebäudereinigung in Berlin." />
+        <link rel="canonical" href="https://sibaggmbh.com/referenzen" />
+        <meta property="og:title" content="Referenzen & Projekte - S.I.B.A.G Facility Service GmbH" />
+        <meta property="og:description" content="Erfahren Sie mehr über unsere vielfältigen Projekte im Bereich Hochbau, Sanierung und Gebäudereinigung." />
+        <meta property="og:url" content="https://sibaggmbh.com/referenzen" />
+      </Helmet>
       
       {/* ─── ১. টপ হেডার সেকশন (অ্যালাইনমেন্ট ফিক্সড) ─── */}
       <div className="container mb-5">
-        {/* বুটস্ট্র্যাপের row এবং col ব্যবহার করে ব্যাকগ্রাউন্ড দেওয়ায় এটি গ্রিডের বাইরে যাবে না */}
         <div className="row g-0 text-white" style={{ backgroundColor: '#0f2c59', borderRadius: '4px' }}>
           <div className="col-12 p-4 p-md-5">
             <div className="row align-items-center">
@@ -76,7 +84,6 @@ const References = () => {
             <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3">
               <div className="card h-100 border-0 shadow-sm overflow-hidden d-flex flex-column" style={{ borderRadius: '4px' }}>
                 
-                {/* 📸 ইমেজ কন্টেইনার এরিয়া */}
                 <div style={{ width: '100%', aspectRatio: '16/10', backgroundColor: '#f1f5f9', position: 'relative', overflow: 'hidden' }}>
                   {project.src ? (
                     <img 
@@ -99,7 +106,6 @@ const References = () => {
                   )}
                 </div>
 
-                {/* 📝 টেক্সট কন্টেন্ট */}
                 <div className="p-3 text-white d-flex flex-column justify-content-center mt-auto" style={{ backgroundColor: '#0f2c59', minHeight: '85px' }}>
                   <h6 className="fw-bold mb-1 text-uppercase" style={{ fontSize: '11.5px', color: '#8cc63f', letterSpacing: '0.5px', lineHeight: '1.4' }}>
                     📐 {project.title}
@@ -117,14 +123,12 @@ const References = () => {
       <div className="container mb-5">
         <div className="row g-4 align-items-stretch">
           
-          {/* 🤝 বাম পাশের পার্টনার লোগো গ্রিড */}
           <div className="col-12 col-lg-7 d-flex flex-column justify-content-center">
             <h5 className="fw-bold mb-3 text-center text-lg-start" style={{ color: '#8cc63f', letterSpacing: '1px', fontSize: '14px' }}>
               UNSERE REFERENZPARTNER
             </h5>
             <div className="row g-2 align-items-center justify-content-center py-3 border-top border-bottom h-100">
               
-              {/* STRABAG */}
               <div className="col-4">
                 <div className="d-flex flex-column align-items-center justify-content-center bg-white" style={{ height: '75px', borderRadius: '4px', border: '1px solid #e2e8f0' }}>
                   <span className="fw-black" style={{ fontSize: '20px', color: '#dc2626', fontWeight: '900', letterSpacing: '0.2px', lineHeight: '1', fontFamily: 'Arial Black, sans-serif' }}>
@@ -136,7 +140,6 @@ const References = () => {
                 </div>
               </div>
 
-              {/* LEONHARD WEISS */}
               <div className="col-4">
                 <div className="d-flex align-items-center justify-content-center overflow-hidden bg-white" style={{ height: '75px', borderRadius: '4px', border: '1px solid #e2e8f0' }}>
                   <img 
@@ -147,7 +150,6 @@ const References = () => {
                 </div>
               </div>
 
-              {/* PFAFFINGER */}
               <div className="col-4">
                 <div className="d-flex flex-column align-items-center justify-content-center bg-white" style={{ height: '75px', borderRadius: '4px', border: '1px solid #e2e8f0' }}>
                   <span className="fw-bold" style={{ fontSize: '18px', color: '#00529c', fontWeight: '800', letterSpacing: '0.1px', lineHeight: '1', fontFamily: 'Arial, Helvetica, sans-serif' }}>
@@ -162,7 +164,6 @@ const References = () => {
             </div>
           </div>
 
-          {/* 🎯 ডান পাশের মার্ক করা স্মার্ট চেকলিস্ট বক্স */}
           <div className="col-12 col-lg-5">
             <div className="p-4 text-white h-100 d-flex flex-column justify-content-center" style={{ backgroundColor: '#0f2c59', borderRadius: '4px' }}>
               <h6 className="fw-bold mb-3" style={{ color: '#8cc63f', letterSpacing: '0.5px', fontSize: '13px' }}>
@@ -197,7 +198,7 @@ const References = () => {
         </div>
       </div>
 
-    {/* ৪. নতুন স্লাইডার সেকশন */}
+    {/* ৪. স্লাইডার সেকশন */}
 
     <div className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
       <div className="container">
@@ -220,7 +221,6 @@ const References = () => {
             1024: { slidesPerView: 5 } 
           }}
         >
-          {/* ইমেজ ডাটাগুলো আপনার প্রজেক্টের সাথে মিলিয়ে নিন */}
           {[
             { title: 'BÜROGEBÄUDE', src: '/Reference1.webp' },
             { title: 'WOHNANLAGEN', src: '/Reference2.webp' },
@@ -277,9 +277,7 @@ const References = () => {
       </div>
 
     </section>
-  
   );
 };
-
 
 export default References;

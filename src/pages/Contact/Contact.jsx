@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async'; // ইমপোর্ট করা হয়েছে
 import emailjs from '@emailjs/browser';
 import Select from 'react-select';
 import './Contact.css';
@@ -40,7 +41,7 @@ const ContactPage = () => {
         form.current.reset(); // ফর্ম খালি হবে
         setSelectedOption(null); // ড্রপডাউন খালি হবে
         
-        // ৫ সেকেন্ড পর মেসেজটি অদৃশ্য হয়ে যাবে
+        // ৫ সেকেন্ড পর মেসেজটি অদৃশ্য হয়ে যাবে
         setTimeout(() => setSuccessMessage(''), 5000);
       }, (error) => {
         alert("Fehler beim Senden: " + error.text);
@@ -49,11 +50,18 @@ const ContactPage = () => {
 
   return (
     <div className="container py-5" style={{ fontFamily: 'sans-serif' }}>
-
+      <Helmet>
+        <title>Kontaktieren Sie S.I.B.A.G | Bauleistungen & Gebäudereinigung in Berlin</title>
+        <meta name="description" content="Haben Sie Fragen zu unseren Leistungen? Kontaktieren Sie die S.I.B.A.G Facility Service GmbH in Berlin für Bauleistungen und Gebäudereinigung. Wir freuen uns auf Ihre Anfrage." />
+        <link rel="canonical" href="https://sibaggmbh.com/kontakt" />
+        <meta property="og:title" content="Kontakt - S.I.B.A.G Facility Service GmbH" />
+        <meta property="og:description" content="Nehmen Sie Kontakt mit uns auf. Ihr Partner für professionelle Facility Services in Berlin." />
+        <meta property="og:url" content="https://sibaggmbh.com/kontakt" />
+      </Helmet>
     
-     {/* সেকশন মার্জিন: marginTop ও marginBottom inline add করা হয়েছে */}
+      {/* সেকশন মার্জিন: marginTop ও marginBottom inline add করা হয়েছে */}
       <section className="py-5" style={{ backgroundColor: '#ffffff', fontFamily: 'sans-serif', marginTop: '-70px', marginBottom: '0px' }}>
-        {/* container এর মাধ্যমে সাইড অ্যালাইনমেন্ট ঠিক রাখা হয়েছে */}
+        {/* container এর মাধ্যমে সাইড অ্যালাইনমেন্ট ঠিক রাখা হয়েছে */}
         <div className="container" style={{ paddingLeft: '0px', paddingRight: '0px' }}> 
           <div className="row g-0 text-white shadow-lg" style={{ backgroundColor: '#0f2c59', borderRadius: '8px' }}>
             <div className="col-12 p-4 p-md-5">
@@ -143,7 +151,7 @@ const ContactPage = () => {
               </div>
             </form>
 
-            {/* সাকসেস মেসেজ (বক্স ছাড়া) */}
+            {/* সাকসেস মেসেজ (বক্স ছাড়া) */}
             {successMessage && (
               <div className="mt-3 text-center fw-bold" style={{ color: '#8cc63f' }}>
                 {successMessage}
@@ -160,7 +168,7 @@ const ContactPage = () => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.528355606627!2d13.348637476579606!3d52.48395567205423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a850772477c77d%3A0x6b45a6c3f6e1f062!2sEbersstra%C3%9Fe%2061%2C%2010827%20Berlin!5e0!3m2!1sde!2sde!4v1680000000000!5m2!1sde!2sde" 
               width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" title="Location Map">
             </iframe>
-         </div>
+           </div>
         </div>
       </div>    
     </div>

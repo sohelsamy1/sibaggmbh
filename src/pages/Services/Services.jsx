@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async'; // মেটা ট্যাগ ব্যবহারের জন্য ইমপোর্ট
 import { Link } from 'react-router-dom';
 import './Services.css';
 
@@ -12,6 +13,15 @@ function Leistungen() {
 
   return (
     <>
+      <Helmet>
+        <title>Unsere Leistungen | Bau- & Reinigungsdienste in Berlin | S.I.B.A.G</title>
+        <meta name="description" content="Entdecken Sie unser umfassendes Leistungsspektrum: Von professioneller Gebäudereinigung und Baureinigung bis hin zu Bauleistungen und Facility Service in Berlin." />
+        <link rel="canonical" href="https://sibaggmbh.com/leistungen" />
+        <meta property="og:title" content="Leistungen - S.I.B.A.G Facility Service GmbH" />
+        <meta property="og:description" content="Professionelle Bauleistungen, Reinigungsdienste und Facility Management für Ihr Objekt in Berlin." />
+        <meta property="og:url" content="https://sibaggmbh.com/leistungen" />
+      </Helmet>
+
       {/* ব্যানার সেকশন */}
       <section className="py-4" style={{ backgroundColor: '#ffffff', fontFamily: 'sans-serif' }}>
         <div className="container mb-3"> 
@@ -68,8 +78,7 @@ function Leistungen() {
         </div>
       </section>
       
-      {/* এই ডিভটির height পরিবর্তন করে আপনি ফুটারের সাথে গ্যাপ বাড়াতে বা কমাতে পারবেন */}
-      
+      {/* এই ডিভটির height পরিবর্তন করে আপনি ফুটারের সাথে গ্যাপ বাড়াতে বা কমাতে পারবেন */}
       <div style={{ height: '40px' }}></div> 
     </>
   );
