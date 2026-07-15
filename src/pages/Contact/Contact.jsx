@@ -60,53 +60,53 @@ const ContactPage = () => {
       </Helmet>
     
       {/* সেকশন মার্জিন: marginTop ও marginBottom inline add করা হয়েছে */}
-       <section style={{ marginTop: '-20px', marginBottom: '50px' }}> {/* এখান থেকে মার্জিন কন্ট্রোল করুন */}
-  <div className="custom-box-width"> 
-    <div className="row g-0 text-white shadow-lg" style={{ backgroundColor: '#0f2c59', borderRadius: '8px' }}>
-      <div className="col-12 p-4 p-md-5">
-        <div className="row align-items-center">
-          
-          {/* বাম পাশে: কন্টাক্ট ডিটেইলস */}
-          <div className="col-md-7 mb-4 mb-md-0">
-            <h3 className="fw-bold mb-4" style={{ color: '#8cc63f', borderBottom: '2px solid #8cc63f', display: 'inline-block' }}>KONTAKT</h3>
-            <div className="row" style={{ fontSize: '15px' }}>
-              <div className="col-sm-6 mb-3">
-                <p className="mb-1 opacity-50">📍 Adresse</p>
-                <strong className="d-block">Ebersstraße 61, 10827 Berlin</strong>
+    <section style={{ marginTop: '-20px', marginBottom: '50px' }}> {/* এখান থেকে মার্জিন কন্ট্রোল করুন */}
+      <div className="custom-box-width"> 
+        <div className="row g-0 text-white shadow-lg" style={{ backgroundColor: '#0f2c59', borderRadius: '5px' }}>
+          <div className="col-12 p-4 p-md-5">
+            <div className="row align-items-center">
+              
+              {/* বাম পাশে: কন্টাক্ট ডিটেইলস */}
+              <div className="col-md-7 mb-4 mb-md-0">
+                <h3 className="fw-bold mb-4" style={{ color: '#8cc63f', borderBottom: '2px solid #8cc63f', display: 'inline-block' }}>KONTAKT</h3>
+                <div className="row" style={{ fontSize: '15px' }}>
+                  <div className="col-sm-6 mb-3">
+                    <p className="mb-1 opacity-50">📍 Adresse</p>
+                    <strong className="d-block">Ebersstraße 61, 10827 Berlin</strong>
+                  </div>
+                  <div className="col-sm-6 mb-3">
+                    <p className="mb-1 opacity-50">📞 Telefon</p>
+                    <strong className="d-block">+49 172 6302135</strong>
+                  </div>
+                  <div className="col-sm-6 mb-0">
+                    <p className="mb-1 opacity-50">✉️ E-Mail</p>
+                    <strong className="d-block">Info.sibaggmbh@web.de</strong>
+                  </div>
+                  <div className="col-sm-6 mb-0">
+                    <p className="mb-1 opacity-50">🕒 Bürozeiten</p>
+                    <strong className="d-block">Mo - Fr: 8:00 - 18:00 Uhr</strong>
+                  </div>
+                </div>
               </div>
-              <div className="col-sm-6 mb-3">
-                <p className="mb-1 opacity-50">📞 Telefon</p>
-                <strong className="d-block">+49 172 6302135</strong>
+
+              {/* ডান পাশে: ব্র্যান্ডিং ইনফো */}
+              <div className="col-md-5 text-md-end text-center mt-4 mt-md-0 border-start-md border-secondary">
+                <div className="fw-bold h2 mb-2" style={{ color: '#ffffff' }}>
+                  S.I.B.A.G
+                </div>
+                <div className="fw-bold mb-3" style={{ color: '#8cc63f', letterSpacing: '1px' }}>
+                  FACILITY SERVICE GMBH
+                </div>
+                <div className="small opacity-50 px-3" style={{ fontSize: '11px', lineHeight: '1.8', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '15px' }}>
+                  BAULEISTUNGEN • GEBÄUDEREINIGUNG • BAUREINIGUNG • FACILITY SERVICE
+                </div>
               </div>
-              <div className="col-sm-6 mb-0">
-                <p className="mb-1 opacity-50">✉️ E-Mail</p>
-                <strong className="d-block">Info.sibaggmbh@web.de</strong>
-              </div>
-              <div className="col-sm-6 mb-0">
-                <p className="mb-1 opacity-50">🕒 Bürozeiten</p>
-                <strong className="d-block">Mo - Fr: 8:00 - 18:00 Uhr</strong>
-              </div>
+
             </div>
           </div>
-
-          {/* ডান পাশে: ব্র্যান্ডিং ইনফো */}
-          <div className="col-md-5 text-md-end text-center mt-4 mt-md-0 border-start-md border-secondary">
-            <div className="fw-bold h2 mb-2" style={{ color: '#ffffff' }}>
-              S.I.B.A.G
-            </div>
-            <div className="fw-bold mb-3" style={{ color: '#8cc63f', letterSpacing: '1px' }}>
-              FACILITY SERVICE GMBH
-            </div>
-            <div className="small opacity-50 px-3" style={{ fontSize: '11px', lineHeight: '1.8', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '15px' }}>
-              BAULEISTUNGEN • GEBÄUDEREINIGUNG • BAUREINIGUNG • FACILITY SERVICE
-            </div>
-          </div>
-
         </div>
       </div>
-    </div>
-  </div>
-</section>
+     </section>
 
       <div className="row g-4 align-items-stretch">
         

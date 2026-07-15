@@ -4,27 +4,44 @@ import './AboutUs.css';
 
 function AboutUs() {
   return (
-    <div className="about-page">
+    <div className="container py-5" style={{ fontFamily: 'sans-serif' }}>
       <Helmet>
         <title>Über Uns | Ihre Experten für Facility Service & Bauleistungen in Berlin | S.I.B.A.G</title>
-        <meta 
-          name="description" 
-          content="Lernen Sie S.I.B.A.G Facility Service GmbH kennen. Wir stehen für Qualität, Werterhalt und nachhaltige Lösungen in der Immobilienbetreuung in Berlin. Erfahren Sie mehr über unsere Mission." 
-        />
-        <link rel="canonical" href="https://sibaggmbh.com/ueber-uns" />
-        
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="Über Uns - S.I.B.A.G Facility Service GmbH Berlin" />
-        <meta property="og:description" content="Erfahren Sie mehr über die Vision und Mission von S.I.B.A.G. Ihr zuverlässiger Partner für Gebäudereinigung und Bauleistungen." />
-        <meta property="og:url" content="https://sibaggmbh.com/ueber-uns" />
       </Helmet>
 
       {/* Hero Sektion */}
-      <section className="about-hero-modern">
-        <div className="container">
-          <div className="hero-content">
-            <h1 className="display-3 fw-bolder text-white">Über Uns</h1>
-            <p className="hero-subtext">Ihr Partner für Exzellenz in Facility Service & Bauwesen.</p>
+      <section style={{ marginTop: '-20px', marginBottom: '50px' }}>
+        <div className="custom-box-width"> 
+          <div className="row g-0 text-white shadow-lg" style={{ backgroundColor: '#0f2c59', borderRadius: '5px' }}>
+            <div className="col-12 p-4 p-md-5">
+              <div className="row align-items-center">
+                
+                {/* বাম পাশে: About Us আর্টিকেল */}
+                <div className="col-md-7 mb-4 mb-md-0">
+                  <h3 className="fw-bold mb-3" style={{ color: '#8cc63f', borderBottom: '2px solid #8cc63f', display: 'inline-block' }}>Über Uns</h3>
+                  <p className="lead mb-3">S.I.B.A.G Facility Service GmbH – Qualität mit System.</p>
+                  <p className="opacity-75" style={{ fontSize: '15px', lineHeight: '1.6' }}>
+                    Wir setzen neue Maßstäbe in der Immobilienbetreuung. Unsere langjährige Erfahrung kombiniert mit modernster Technik sorgt für nachhaltige Ergebnisse, die überzeugen. 
+                    Von der Gebäudereinigung bis hin zu komplexen Bauleistungen stehen wir für Professionalität, Effizienz und Werterhalt. Vertrauen Sie auf einen Partner, der Ihre Immobilie mit Sorgfalt betreut.
+                  </p>
+                </div>
+
+                
+                {/* ডান পাশে: ব্র্যান্ডিং ইনফো */}
+              <div className="col-md-5 text-md-end text-center mt-4 mt-md-0 border-start-md border-secondary">
+                <div className="fw-bold h2 mb-2" style={{ color: '#ffffff' }}>
+                  S.I.B.A.G
+                </div>
+                <div className="fw-bold mb-3" style={{ color: '#8cc63f', letterSpacing: '1px' }}>
+                  FACILITY SERVICE GMBH
+                </div>
+                <div className="small opacity-50 px-3" style={{ fontSize: '11px', lineHeight: '1.8', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '15px' }}>
+                  BAULEISTUNGEN • GEBÄUDEREINIGUNG • BAUREINIGUNG • FACILITY SERVICE
+                </div>
+              </div>
+
+              </div>
+            </div>
           </div>
         </div>
       </section>

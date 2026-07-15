@@ -72,6 +72,10 @@ const Footer = () => {
                   Steuern Nr: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span className="text-white">29/533/31003</span>
                 </div>
+                  <div style={{ display: 'block' }}>
+                  HRB: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span className="text-white">288 177 B</span>
+                </div>
               </div>
 
 

@@ -25,7 +25,7 @@ function Leistungen() {
       {/* ব্যানার সেকশন */}
       <section className="py-4" style={{ backgroundColor: '#ffffff', fontFamily: 'sans-serif' }}>
         <div className="container mb-3"> 
-          <div className="row g-0 text-white" style={{ backgroundColor: '#0f2c59', borderRadius: '4px' }}>
+          <div className="row g-0 text-white" style={{ backgroundColor: '#0f2c59', borderRadius: '5px' }}>
             <div className="col-12 p-4 p-md-5">
               <div className="row align-items-center">
                 <div className="col-md-7">

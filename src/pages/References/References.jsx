@@ -25,23 +25,22 @@ const References = () => {
     'Wohnanlagen',
     'Bürogebäude',
     'Industriehallen',
-    'Gewerbeobjekte'
+    'Gewerbeobjekte',
+     'Bildungseinrichtungen & Schulen',
+    'Hotels & Gastronomiebetriebe',
+    'Kliniken & Pflegeheime'
   ];
 
   const einsatzbereicheRight = [
     'Einkaufszentren',
     'Rohbauprojekte',
     'Sanierungsmaßnahmen',
-    'Praxen & Kanzleien'
+    'Praxen & Kanzleien',
+    'Öffentliche Gebäude & Behörden',
+    'Logistikzentren & Lagerhallen',
+    'Freizeit- & Sportanlagen'
   ];
 
-  const features = [
-    { title: 'ERFAHRENES TEAM', desc: 'Qualifizierte Fachkräfte', icon: '👥' },
-    { title: 'QUALITÄT', desc: 'Höchste Standards', icon: '⭐' },
-    { title: 'ZUVERLÄSSIG', desc: 'Termingerecht & flexibel', icon: '⏱️' },
-    { title: 'SICHERHEIT', desc: 'Sicheres Arbeiten', icon: '🛡️' },
-    { title: 'FAIRE PREISE', desc: 'Transparente Angebote', icon: '💰' },
-  ];
 
   return (
     <section className="py-4" style={{ backgroundColor: '#ffffff', fontFamily: 'sans-serif' }}>
@@ -129,37 +128,63 @@ const References = () => {
             </h5>
             <div className="row g-2 align-items-center justify-content-center py-3 border-top border-bottom h-100">
               
-              <div className="col-4">
-                <div className="d-flex flex-column align-items-center justify-content-center bg-white" style={{ height: '75px', borderRadius: '4px', border: '1px solid #e2e8f0' }}>
-                  <span className="fw-black" style={{ fontSize: '20px', color: '#dc2626', fontWeight: '900', letterSpacing: '0.2px', lineHeight: '1', fontFamily: 'Arial Black, sans-serif' }}>
-                    STRABAG
-                  </span>
-                  <span className="fw-bold text-dark text-uppercase mt-1" style={{ fontSize: '7.5px', letterSpacing: '0.5px', fontFamily: 'sans-serif' }}>
-                    WORK ON PROGRESS
-                  </span>
-                </div>
-              </div>
+          <div className="row">
 
-              <div className="col-4">
-                <div className="d-flex align-items-center justify-content-center overflow-hidden bg-white" style={{ height: '75px', borderRadius: '4px', border: '1px solid #e2e8f0' }}>
-                  <img 
-                    src="/References/ref10.webp" 
-                    alt="LEONHARD WEISS" 
-                    style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '6px' }} 
-                  />
-                </div>
+            {/* Box 1: Text Based */}
+            <div className="col-6 col-md-4">
+              <div className="sasse-box-container">
+                <span className="sasse-title">STRABAG</span>
+                <span className="sasse-description">
+                  <strong className="sasse-subtitle">SOCIETAS EUROPAEA</strong>
+                  Unterstützung bei verschiedenen Bauprojekten im Bereich Rohbauarbeiten, Schalungsarbeiten und Maurerarbeiten.
+                </span>
               </div>
+            </div>
 
-              <div className="col-4">
-                <div className="d-flex flex-column align-items-center justify-content-center bg-white" style={{ height: '75px', borderRadius: '4px', border: '1px solid #e2e8f0' }}>
-                  <span className="fw-bold" style={{ fontSize: '18px', color: '#00529c', fontWeight: '800', letterSpacing: '0.1px', lineHeight: '1', fontFamily: 'Arial, Helvetica, sans-serif' }}>
-                    PFAFFINGER
-                  </span>
-                  <span className="text-secondary text-uppercase mt-1" style={{ fontSize: '6.5px', letterSpacing: '0.5px', fontWeight: '600', color: '#4b5563', fontFamily: 'sans-serif' }}>
-                    UNTERNEHMENSGRUPPE
-                  </span>
-                </div>
+            {/* Box 2: Image Based */}
+            <div className="col-6 col-md-4">
+              <div className="ref-box ref-box-2">
+                <div className="ref-img-container"><img src="/References/refimg10.webp" alt="Partner" /></div>
+                <span className="ref-description">Partner für Rohbau- und Betonarbeiten sowie Reinigungsleistungen auf diversen Baustellen.</span>
               </div>
+            </div>
+
+            {/* Box 3: Image Based */}
+            <div className="col-6 col-md-4">
+              <div className="ref-box ref-box-3">
+                <div className="ref-img-container"><img src="/References/Logo3.webp" alt="Partner" /></div>
+                <span className="ref-description">Zusammenarbeit bei Industrie- und Gewerbebauprojekten im Bereich Bauleistungen und Facility Services.</span>
+              </div>
+            </div>
+
+            {/* Box 4: Image Based */}
+            <div className="col-6 col-md-4">
+              <div className="ref-box ref-box-4">
+                <div className="ref-img-container"><img src="/References/reflogo4.webp" alt="Partner" /></div>
+                <span className="ref-description">Zusammenarbeit im Bereich Reinigungs- und Facility-Services für Büro-, Industrie- und Gewerbeobjekte.</span>
+              </div>
+            </div>
+
+            {/* Box 5: Image Based */}
+            <div className="col-6 col-md-4">
+              <div className="ref-box ref-box-5">
+                <div className="ref-img-container"><img src="/References/Reflogo5.webp" alt="Partner" /></div>
+                <span className="ref-description">Zusammenarbeit im Bereich Gebäudereinigung und infrastrukturelles Facility Management.</span>
+              </div>
+            </div>
+
+            {/* Box 6: Text Based (Unique) */}
+            <div className="col-6 col-md-4">
+              <div className="sasse-box-container">
+                <span className="sasse-title">sasse</span>
+                <span className="sasse-description">
+                  <strong className="sasse-subtitle">Die Gebäudedienstleister</strong>
+                  Unterstützung bei Unterhalts-, Glas- und Sonderreinigungsleistungen sowie Facility Services.
+                </span>
+              </div>
+            </div>
+          </div>
+
 
             </div>
           </div>
@@ -249,32 +274,7 @@ const References = () => {
     </div>
 
 
-      {/* ─── 5. নিচের প্রফেশনাল ইনফোগ্রাফিক্স বার ─── */}
-      <div className="container-fluid py-4 text-white" style={{ backgroundColor: '#0b1d37' }}>
-        <div className="container">
-          <div className="row align-items-center g-3 text-center text-md-start">
-            <div className="col-lg-10">
-              <div className="row g-3 justify-content-center">
-                {features.map((feat, index) => (
-                  <div key={index} className="col-6 col-sm-4 col-md-2.4 col-lg">
-                    <div className="d-flex flex-column flex-md-row align-items-center gap-2">
-                      <span style={{ fontSize: '20px' }}>{feat.icon}</span>
-                      <div>
-                        <div className="fw-bold text-uppercase" style={{ fontSize: '10.5px', color: '#8cc63f' }}>{feat.title}</div>
-                        <div className="opacity-75" style={{ fontSize: '9.5px' }}>{feat.desc}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="col-lg-2 text-center text-lg-end border-start border-secondary d-none d-lg-block">
-              <div className="fw-bold" style={{ fontSize: '13px', color: '#ffffff' }}>HRB 288 177 B</div>
-              <div className="small opacity-50" style={{ fontSize: '10px' }}>Handelsregister</div>
-            </div>
-          </div>
-        </div>
-      </div>
+ 
 
     </section>
   );
