@@ -76,8 +76,23 @@ function Leistungen() {
             ))}
           </div>
         </div>
-      </section>
-      
+      </section>     
+
+          <div className="container text-center my-5">
+            <h3 className="mb-4" style={{ color: '#0f2c59' }}>Informationsmaterial</h3>
+            <p className="mb-4">Hier können Sie unsere aktuelle Broschüre direkt ansehen und herunterladen.</p>      
+            <a 
+              href="/SIBAG_Brochure.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-lg shadow-sm"
+              style={{ backgroundColor: '#8cc63f', color: '#fff', fontWeight: 'bold' }}
+            >
+              📋 Broschüre ansehen / downloaden
+            </a>
+          </div>
+
+
       {/* এই ডিভটির height পরিবর্তন করে আপনি ফুটারের সাথে গ্যাপ বাড়াতে বা কমাতে পারবেন */}
       <div style={{ height: '40px' }}></div> 
     </>
